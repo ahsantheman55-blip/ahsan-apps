@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahsan’s Clock Sanctuary — Design Brief</title>
+<style>
+body{max-width:55rem;margin:2rem auto;padding:0 1rem;font:1.1rem/1.65 system-ui,sans-serif;color:#171717;background:#fff}
+h1,h2{line-height:1.25}
+section{margin-top:2.5rem}
+a{color:#0645ad}
+a:focus{outline:3px solid;outline-offset:4px}
+code{font-size:0.95em}
+</style>
+</head>
+<body>
+<a href="#main">Skip to design brief</a>
+<header>
+<h1>Ahsan’s Clock Sanctuary — Design Brief</h1>
+<p>Design and sourcing reference for a clock-themed sound sanctuary. No app implementation in this document. Status date: 9 November 2026, Europe/London.</p>
+</header>
+<nav id="contents" aria-label="Contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#section-1">Product vision and status</a></li>
+<li><a href="#section-2">Accessibility and product shape</a></li>
+<li><a href="#section-3">Foundation clock sounds — verified</a></li>
+<li><a href="#section-4">Complementary sounds — researched candidates</a></li>
+<li><a href="#section-5">Carry-over tone features</a></li>
+<li><a href="#section-6">Multi-point holds in Journey mode</a></li>
+<li><a href="#section-7">Feature wishlist — Ten-tone binaural and mood presets</a></li>
+<li><a href="#section-8">ADVISORY — Lock screen and background playback</a></li>
+<li><a href="#section-9">Open decisions and unfinished items</a></li>
+<li><a href="#section-10">Sources checked</a></li>
+</ol>
+</nav>
+<main id="main" tabindex="-1">
+<section aria-labelledby="section-1"><h2 id="section-1">Product vision and status</h2>
+<p><strong>Confirmed:</strong> Clock Sanctuary is a new, separate clock-themed meditation app for Ahsan Ali (totally blind, iPhone 11, VoiceOver, British English). Sound-only HTML with headings for flick navigation. The spine is the grandfather clock (tick, pendulum, hour strike), with optional weather, soft music, and a low “factory calm” hum.</p>
+<p><strong>Status:</strong> Design and sourcing only as of 9 November 2026, Europe/London. <strong>No app build in this task.</strong> A separate builder may start next. Night Fire at <code>/workspace/nightfire</code> was not modified (another worker may be adding clocks there).</p>
+<p>Workspace notes: <code>/workspace/clock-sanctuary/DESIGN.md</code>, <code>/workspace/clock-sanctuary/sources.md</code>, shared luxury wishlist <code>/workspace/sound-sourcing/wishlist-ten-tone-binaural.md</code>.</p>
+<p>How to read this brief: <strong>Confirmed</strong> means Ahsan asked for it. <strong>Proposal</strong> means a design suggestion. <strong>Open question</strong> means unsettled. <strong>Wishlist / luxury</strong> means optional indulgence, not required for a first playable build.</p>
+<p><a href="#contents">Back to contents</a></p></section><section aria-labelledby="section-2"><h2 id="section-2">Accessibility and product shape</h2>
+<p><strong>Confirmed:</strong> Sound-first; semantic headings; British English; Credits screen for every CC BY asset.</p>
+<p><strong>Proposal:</strong> Match Sound Sanctuary / Night Fire patterns — large buttons, labelled sliders with spoken percentages, live status text, “describe current mix”, sleep timer with remaining time on request. Prefer offline packs. Do not rely on haptics.</p>
+<p><strong>Open question:</strong> Safari tab only for v1, or also Add to Home Screen? (Safari-first is safer on iOS.)</p>
+<p><a href="#contents">Back to contents</a></p></section><section aria-labelledby="section-3"><h2 id="section-3">Foundation clock sounds — verified</h2>
+<p>All four user-named Freesound recordings were checked live on 9 November 2026. Each page shows <strong>CC BY 4.0</strong>. Attribution required on the Credits screen.</p>
+<ol>
+<li><a href="https://freesound.org/people/WIM/sounds/18037/">grandfather's clock.wav by WIM</a> — about 1 minute; strike then ticking; 205 ratings. Licence: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
+<li><a href="https://freesound.org/people/nightcustard/sounds/620573/">Ticking Grandfather Clock by nightcustard</a> — about 15 minutes 36 seconds; clean longcase ticks. Licence: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
+<li><a href="https://freesound.org/people/daveincamas/sounds/44101/">Pendulum.wav by daveincamas</a> — about 39 seconds; “Just the pendulum. Can be looped.”; 1840 grandfather clock retake tags. Licence: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
+<li><a href="https://freesound.org/people/joedeshon/sounds/127108/">grandfather_clock_ticking_60_seconds.wav by joedeshon</a> — exactly 60 seconds; author says perfectly loopable. Licence: <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</li>
+</ol>
+<p><strong>Attribution-free backups (verified):</strong></p>
+<ul>
+<li><a href="https://bigsoundbank.com/grandfather-clock-hour-1-s1569.html">BigSoundBank Grandfather clock, hour #1</a> by Joseph SARDIN — CC0, 23 seconds. Related: hour #2, half hour, and <a href="https://bigsoundbank.com/grandfather-clock-ticking-s1567.html">ticking</a> (20 seconds, CC0). Browser fetch confirmed CC0; curl from the build box got HTTP 403.</li>
+<li><a href="https://selektaudio.com/sound-lab/textures/clock">Selekt Audio clock ticking catalog</a> — page states 185 clock ticking sounds, mostly loops, CC0 for listed CC0 entries; includes grandfather pendulums. Per-download certificate not pulled in this pass — check before shipping.</li>
+</ul>
+<p><a href="#contents">Back to contents</a></p></section><section aria-labelledby="section-4"><h2 id="section-4">Complementary sounds — researched candidates</h2>
+<p><strong>Confirmed to research.</strong> Prefer CC0; CC BY OK with credits; avoid NC if a business is possible. Full rows in <code>sources.md</code>.</p>
+<ul>
+<li><strong>Rain on a roof (steady):</strong> Preferred <a href="https://freesound.org/people/tuesdayblack/sounds/532267/">Rain on Roof by tuesdayblack</a> (CC0, ~19 min). Alts: bassimat 833924 (CC0); felix.blume 673486 metal roof (CC0).</li>
+<li><strong>Distant thunder:</strong> Preferred <a href="https://freesound.org/people/richwise/sounds/361401/">Distant Thunder by richwise</a> (CC0, ~7 min). Alts: 641055, 317481 (CC0). NPS Yellowstone thunder is public domain but may include robin calls.</li>
+<li><strong>Music box / soft piano:</strong> Preferred <a href="https://freesound.org/people/ZHR%C3%98/sounds/676721/">soft music box.wav by ZHRØ</a> (CC0, loopable). Alts: ZHRØ 676722; BeroundSound 696033; soft piano CVLTIV8R 810857, deadrobotmusic 575035 (all CC0 verified).</li>
+<li><strong>Ocean waves:</strong> Preferred <a href="https://freesound.org/people/MamickaBeeGames/sounds/803330/">Ocean Waves by MamickaBeeGames</a> (CC0, ~15 min). Alts: Mr_Lamppost 800900 shingle beach; L.Finck 636552 binaural; Mildly Useless 16 s CC0 seamless loop.</li>
+<li><strong>Factory calm hum:</strong> Preferred gentle <a href="https://freesound.org/people/TimBahrij/sounds/234918/">ambient low hum (aircon) by TimBahrij</a> (CC0). Alts: 776264, 637930 (CC0). Caution: kyles 450126 has a distant warning alarm — poor for sleep.</li>
+</ul>
+<p><strong>Unfinished / not done in this pass:</strong> audio files were not downloaded or quality-measured (peaks, hum, loop seams). Listener QA remains for the builder.</p>
+<p><a href="#contents">Back to contents</a></p></section><section aria-labelledby="section-5"><h2 id="section-5">Carry-over tone features</h2>
+<p><strong>Confirmed to carry</strong> from Sound Sanctuary / Night Fire: binaural layers; isochronic layers; solfeggio; Tibetan bowls; crystal bowls; didgeridoo; bells/gongs; Journey beat drift (15 Hz down toward 0.5 Hz and back); pink and brown noise; vinyl crackle (confirm which live build exposes it — <strong>unfinished verification</strong>).</p>
+<p><strong>Honesty:</strong> Binaural, isochronic and solfeggio effects lack strong, consistent clinical evidence. Present as relaxation sound design, not medicine.</p>
+<p><strong>Up to ten layers of each:</strong> Wishlist expansion. Twenty oscillators are cheap; many simultaneous beats are muddy and battery-heavier on iPhone 11. Proposal: allow ten in the data model; default 1–2; warn above four.</p>
+<p><a href="#contents">Back to contents</a></p></section><section aria-labelledby="section-6"><h2 id="section-6">Multi-point holds in Journey mode</h2>
+<p><strong>Confirmed key feature</strong> for Clock Sanctuary Journey: several hold stages on descent and ascent (not only one hold).</p>
+<p><strong>Proposed data model:</strong> an ordered list of stages. Each stage has target Hz, transition duration, transition shape (smooth or stepped), and hold duration. Total time is the sum of transitions and holds. Optional spoken stage announcements (default off for sleep). VoiceOver editing: add, remove, reorder, edit fields, speak whole journey and total time. Presets proposed (classic single hold, deep staircase, nap) but not settled.</p>
+<p><strong>Clock-linked proposals (not confirmed):</strong> tick tempo easing with the journey; hour chime marking stage changes.</p>
+<p><strong>Open:</strong> reverse ascent vs independent ascent list; announcement defaults; chime on phone hour vs stage vs both.</p>
+<p><a href="#contents">Back to contents</a></p></section><section aria-labelledby="section-7"><h2 id="section-7">Feature wishlist — Ten-tone binaural and mood presets</h2>
+<p><strong>Wishlist / luxury — not core.</strong> Full shared note: <code>/workspace/sound-sourcing/wishlist-ten-tone-binaural.md</code> (also for Night Fire / Sound Sanctuary later; do not race the Night Fire worker).</p>
+<p><strong>Ten-tone binaural preset:</strong> one indulgence button starts up to ten binaural pairs (default beats 2–20 Hz even steps; proposed carriers harmonic series 110–605 Hz). Per-pair VoiceOver volume sliders labelled with beat and carrier; master; mute all; soft fade-in; headphones required; gain ~1/N plus limiter. Ten beats blur — atmospheric chord of pulses, not ten therapies.</p>
+<p><strong>Mood presets (Proposal)</strong> on the same engine — subset of ≤10 pairs, editable, custom moods savable:</p>
+<ul>
+<li><strong>Stay Calm</strong> — steady alpha/theta (e.g. 6, 8, 10 Hz); no drift; 20–45 min or open-ended.</li>
+<li><strong>Reduce Anxiety</strong> — gentle descent via Journey holds (e.g. 14+12 → 10+8 → 6+4); not stimulating; 15–30 min. <strong>Not a treatment for anxiety.</strong></li>
+<li>Also sketched: Focus; Sleep Onset; Deep Relaxation; Alertness (beat sets, carriers, volumes, drift, durations in the wishlist file).</li>
+</ul>
+<p>Mood band labels are conventional associations only — not medically proven.</p>
+<p><a href="#contents">Back to contents</a></p></section><section aria-labelledby="section-8"><h2 id="section-8">ADVISORY — Lock screen and background playback</h2>
+<p><strong>Prominent advisory (from Night Fire / Sound Sanctuary research and practice):</strong></p>
+<ul>
+<li><strong>Web Audio</strong> live mixes (oscillators, buffer engines) often <strong>stop or suspend</strong> when iPhone Safari is locked or backgrounded.</li>
+<li><strong>HTML audio</strong> elements, optionally with the Media Session API, can continue as ordinary media and may show lock-screen controls — re-test on iPhone 11.</li>
+<li><strong>Generated tones under lock:</strong> pre-render a seamless loop or session file (OfflineAudioContext), then play through HTML audio — as in Sound Sanctuary’s “Make lock-screen track” pattern. Live Journey announcements will not run while locked unless re-architected.</li>
+<li>Installed PWAs are not automatically better for background audio on iOS.</li>
+</ul>
+<p><strong>Honest copy (Proposal):</strong> keep Safari open for the full live mix; use a lock-screen track for sleep with the screen off.</p>
+<p><strong>Open:</strong> is lock-screen support required on day one?</p>
+<p><a href="#contents">Back to contents</a></p></section><section aria-labelledby="section-9"><h2 id="section-9">Open decisions and unfinished items</h2>
+<p><strong>Open decisions:</strong> default sleep mix; layer-count soft warning vs hard cap; Journey ascent editing; clock chime triggers; Ten-tone bus vs replacing layers; harmonic series vs just chord carriers; fade-in length; vinyl crackle source build; water category slot for later; lock-screen as v1 requirement.</p>
+<p><strong>Unfinished in this design pass:</strong></p>
+<ul>
+<li>No audio downloaded; no ffmpeg quality pass on clock or complementary files.</li>
+<li>Selekt individual sample certificates not downloaded.</li>
+<li>Vinyl crackle presence in current live builds not fully confirmed.</li>
+<li>No app shell, no encode scripts, no sharehtml publish.</li>
+</ul>
+<p><strong>Suggested first increments for the builder (not done here):</strong> headings + one tick bed + credits → pendulum/strike → rain/thunder → multi-point Journey → lock-screen pre-render → luxury Ten-tone/moods later.</p>
+<p><a href="#contents">Back to contents</a></p></section><section aria-labelledby="section-10"><h2 id="section-10">Sources checked</h2>
+<p>Local context read (not modified): <code>/workspace/reports/Ahsan-nature-sounds-research.txt</code>, <code>/workspace/nightfire/NOTES.md</code>, Sound Sanctuary / Night Fire Journey and lock-screen patterns under <code>/workspace/brainwave</code> and <code>/workspace/nightfire/app</code>.</p>
+<p>Live licence checks 9 November 2026: Freesound foundation IDs 18037, 620573, 44101, 127108 (all CC BY 4.0); complementary Freesound CC0/BY candidates listed in sections 3–4 and <code>sources.md</code>; BigSoundBank CC0 hour and ticking via browser fetch; Selekt clock catalog page (185 sounds); NPS Yellowstone thunder page.</p>
+<p><a href="#contents">Back to contents</a></p></section>
+</main>
+</body>
+</html>

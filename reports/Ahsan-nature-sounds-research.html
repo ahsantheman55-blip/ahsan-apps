@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahsan’s Nature Sounds Research — Sound Sanctuary Augmentations</title>
+<style>
+body{max-width:55rem;margin:2rem auto;padding:0 1rem;font:1.1rem/1.65 system-ui,sans-serif;color:#171717;background:white}
+h1,h2{line-height:1.25}
+section{margin-top:2.5rem}
+a{color:#0645ad}
+a:focus{outline:3px solid;outline-offset:4px}
+</style>
+</head>
+<body>
+<a href="#main">Skip to report</a>
+<header>
+<h1>Ahsan’s Nature Sounds Research — Sound Sanctuary Augmentations</h1>
+<p>Research and recommendations only. No app changes and no build. Prepared for Ahsan Ali (totally blind, iPhone 11 with VoiceOver, British English). Status date: 9 November 2026, Europe/London.</p>
+<p>How to read this: <strong>Researched</strong> means checked from a named public page or from files already on disk. <strong>Recommendation</strong> means a design suggestion, not a requirement. <strong>Quality check</strong> means measurements run on the Night Fire audio files in <code>/workspace/nightfire</code>.</p>
+<p>Apps already built: original Sound Sanctuary at <a href="https://8v8vpyo.sharehtml.org/">Sound Sanctuary (original)</a>; Night Fire at <a href="https://egs4u89.sharehtml.org/">Sound Sanctuary Night Fire</a>. Ahsan’s favourite mix is fire + crickets + cicadas + wind.</p>
+</header>
+<nav aria-label="Contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#section-1">What is already in the apps</a></li>
+<li><a href="#section-2">Free and Creative Commons sources (safe / caution / avoid)</a></li>
+<li><a href="#section-3">Quality analysis methods and checks on current files</a></li>
+<li><a href="#section-4">New sound variety beyond fire, crickets, cicadas and wind</a></li>
+<li><a href="#section-5">Seamless looping design</a></li>
+<li><a href="#section-6">Augmentations for a blind, sound-only user</a></li>
+<li><a href="#section-7">Prioritised improvements (top 10)</a></li>
+<li><a href="#section-8">Sources checked</a></li>
+</ol>
+</nav>
+<main id="main" tabindex="-1">
+
+<section aria-labelledby="section-1">
+<h2 id="section-1">What is already in the apps</h2>
+<p>Researched from Night Fire notes, credits and encode script, and from the original Sound Sanctuary notes:</p>
+<ul>
+<li>Night Fire nature beds: crackling fire (Freesound 501417, CC0), night crickets (522299, CC0), cicadas and night insects (328293, CC0), wind in trees (477187, CC0). Also a recorded singing bowl (848027, CC0) and live-generated tones.</li>
+<li>Night Fire processing: sources cut into roughly 40-second MP3 chunks, high-pass filtered, loudness-matched, limited, then played with shuffle and crossfades in the Web Audio API (not a simple HTML audio loop).</li>
+<li>Original Sound Sanctuary packs already include rain, stream, ocean, wind, birds, crickets, fire, underwater, train, plus bowl, dolphins and boat on the main page. A past train sample had GSM mobile interference that caused stutter; that is a useful quality lesson.</li>
+<li>Extra raw downloads sitting in Night Fire’s <code>raw/</code> folder but not used in the live encode map include alternate fire (410917), alternate wind (454367), and extra insect nightscapes (178504, 479041). Recommendations below aim for sounds that are genuinely new relative to both apps, or clearer variants of rain rather than another generic rain bed.</li>
+</ul>
+<p><a href="#main">Back to start of report</a></p>
+</section>
+
+<section aria-labelledby="section-2">
+<h2 id="section-2">Free and Creative Commons sources (safe / caution / avoid)</h2>
+<p>If Ahsan later monetises a business around these apps, treat CC-BY-NC and “personal / educational only” licences as blocked for commercial shipping. Prefer CC0 or clear royalty-free commercial terms first; use CC-BY when attribution is easy to keep in the credits screen.</p>
+
+<h3>SAFE for a commercial or free meditation app (with the notes given)</h3>
+<ol>
+<li><strong>Freesound — CC0 files.</strong> Verdict: SAFE. Freesound hosts per-file licences. CC0 is treated as public-domain dedication: reuse, modification and commercial use are allowed; credit is not required but is polite. Night Fire already uses this path. Filter search to Creative Commons 0. Attribution (CC-BY) is also commercially usable if credits stay accurate. See the <a href="https://freesound.org/help/faq/">Freesound FAQ on licences</a> and <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0 1.0</a>.</li>
+<li><strong>Freesound — CC-BY files.</strong> Verdict: SAFE with attribution. Credit the author, title, source URL and licence on the credits screen (already the Night Fire pattern).</li>
+<li><strong>US National Park Service sound libraries (public domain).</strong> Verdict: SAFE. Yellowstone and Rocky Mountain parks state recordings are in the public domain and may be downloaded and used without limitation, with credit to the National Park Service where appropriate. The wider NPS Natural Sounds gallery likewise says files are public domain. Examples verified live: <a href="https://www.nps.gov/yell/learn/photosmultimedia/soundlibrary.htm">Yellowstone Sound Library</a>, <a href="https://www.nps.gov/yell/learn/photosmultimedia/sounds-thunder.htm">Yellowstone thunder page</a>, <a href="https://www.nps.gov/yell/learn/photosmultimedia/sounds-chorusfrogs.htm">Yellowstone boreal chorus frogs</a>, <a href="https://www.nps.gov/romo/learn/photosmultimedia/soundlibrary.htm">Rocky Mountain Sound Library</a>, <a href="https://www.nps.gov/subjects/sound/gallery.htm">NPS Natural Sounds gallery</a>.</li>
+<li><strong>Wikimedia Commons audio with CC0 or CC-BY.</strong> Verdict: SAFE when the file page licence is CC0 or CC-BY (or public domain / US government work). Check each file. Useful category: <a href="https://commons.wikimedia.org/wiki/Category:Audio_files_of_animal_sounds_from_the_United_States_Fish_and_Wildlife_Service">US Fish and Wildlife Service animal sounds on Commons</a>.</li>
+<li><strong>Pixabay Content License (sound effects).</strong> Verdict: SAFE for in-app use with care. Commercial use and modification are allowed; attribution is not required. You must not redistribute the files as a standalone sound pack. Using them inside a mixed meditation scene with UI and other layers matches normal Pixabay guidance. Binding text is in Pixabay’s terms; summary at <a href="https://pixabay.com/service/license-summary/">Pixabay Content License summary</a>. (The sound-effects browse URL sometimes blocks automated fetch; the licence page was retrieved successfully.)</li>
+</ol>
+
+<h3>CAUTION</h3>
+<ol>
+<li><strong>Sonniss GDC Game Audio Bundles.</strong> Verdict: CAUTION for a nature-sounds app. The <a href="https://sonniss.com/gdc-bundle-license/">GDC bundle licence (v2.0, effective 27 August 2026)</a> allows commercial use in games, films, podcasts, apps and interactive projects with no attribution, and forbids reselling the sounds as a library or using them for AI training. Important grey area: the grant covers synchronisation inside the licensee’s project; it does not extend to supplying the sound effects themselves as the main output of a device or service. A pure “press rain and hear rain” player is closer to that grey area than a designed multi-layer sanctuary scene. Recommendation: if used at all, keep Sonniss material as layers inside an original mix, not as a labelled raw library download. Archive: <a href="https://sonniss.com/gameaudiogdc/">Sonniss GameAudioGDC archive</a>; current giveaway: <a href="https://gdc.sonniss.com/">GDC 2026 Game Audio Bundle</a>.</li>
+<li><strong>Internet Archive audio.</strong> Verdict: CAUTION. Many items are fine, but licences vary per item (public domain, CC-BY, CC-BY-NC, and “all rights reserved”). Always open the item’s rights field. Hub: <a href="https://archive.org/details/opensource_audio">Internet Archive open source audio</a>.</li>
+<li><strong>Freesound Sampling+ (legacy).</strong> Verdict: CAUTION / prefer avoid for new picks. Still present on older uploads; awkward for commercial advertising-style use. Prefer CC0 or CC-BY.</li>
+<li><strong>British Library Sounds / BL website content.</strong> Verdict: CAUTION. General BL terms restrict commercial re-use unless authorised; some wildlife items carry their own Creative Commons mark and must be checked one by one. Not a free-for-all library for an app business. See <a href="https://www.bl.uk/terms">British Library terms</a>.</li>
+</ol>
+
+<h3>AVOID for a monetisable app (or use only after paid / written clearance)</h3>
+<ol>
+<li><strong>BBC Sound Effects (RemArc / BBC Rewind free download).</strong> Verdict: AVOID for commercial shipping. BBC states the free library is for personal, educational or research use under its licence; commercial use needs a separate licence (commonly via Pro Sound Effects). Confirmed via <a href="https://www.bbc.co.uk/contact/questions/using-bbc-content/use-sound-effects">BBC contact page on sound effects</a> and the live site <a href="https://sound-effects.bbcrewind.co.uk/">BBC Sound Effects archive</a>.</li>
+<li><strong>Freesound CC-BY-NC.</strong> Verdict: AVOID if there is any chance of monetisation, ads, paid tiers or selling the app. Non-commercial clause blocks earning money from the work that includes the sound.</li>
+<li><strong>xeno-canto bird recordings (default licences).</strong> Verdict: AVOID for commercial apps in most cases. Terms show BY-NC-ND and BY-NC-SA as common options; BY-SA allows commercial use but forces share-alike on derivatives, which is usually a poor fit for a proprietary meditation product. Always read the individual recording. Terms: <a href="https://xeno-canto.org/about/terms">xeno-canto Terms of Use</a>.</li>
+<li><strong>Cornell Macaulay Library.</strong> Verdict: AVOID as a free bulk source. Embeds are for non-commercial use; commercial use needs a media request and licence agreement, often with fees. See <a href="https://support.ebird.org/en/support/solutions/articles/48001064551-using-and-requesting-media">Macaulay media request help</a> and <a href="https://www.macaulaylibrary.org/">Macaulay Library</a>.</li>
+</ol>
+<p>Recommendation — sourcing policy for Ahsan’s future business: primary = Freesound CC0 + NPS public domain; secondary = Freesound CC-BY with credits; optional = Pixabay or carefully scoped Sonniss layers; never BBC free RemArc, Macaulay free embeds, xeno-canto NC, or Freesound NC for shipped commercial builds.</p>
+<p><a href="#main">Back to start of report</a></p>
+</section>
+
+<section aria-labelledby="section-3">
+<h2 id="section-3">Quality analysis methods and checks on current files</h2>
+<p>Researched / quality check: free recordings vary wildly. “Free” is not “professional”. Detect problems before they loop all night in someone’s ears.</p>
+
+<h3>What to listen and measure for</h3>
+<ul>
+<li><strong>Clipping:</strong> peak near 0 dBFS; harsh crackles. Target peaks roughly −1 dB or lower after limiting.</li>
+<li><strong>DC offset:</strong> absolute mean far from zero (for example above about 0.01). Causes clicks at edits.</li>
+<li><strong>Noise floor / hiss:</strong> high RMS when “quiet”; hiss rises when you apply large gain.</li>
+<li><strong>Mains hum:</strong> 50 Hz (UK/EU) or 60 Hz (US) tone, often with harmonics.</li>
+<li><strong>Bandwidth cutoff:</strong> little energy above about 16 kHz often means an old MP3 or phone recording.</li>
+<li><strong>MP3 artefacts:</strong> swirly highs, pre-echo on crackles, padding gaps at loop points.</li>
+<li><strong>Dropouts / clicks / handling noise / wind rumble:</strong> visible as spikes or sub-bass thumps.</li>
+<li><strong>Fake stereo:</strong> identical left and right, or one channel delayed copy.</li>
+<li><strong>Loudness:</strong> integrated LUFS far from your target bed (Night Fire aims roughly −27 to −30 LUFS on nature beds).</li>
+<li><strong>Contamination:</strong> speech, traffic, dogs, GSM buzz (the old train sample lesson).</li>
+</ul>
+
+<h3>Concrete free tools and commands</h3>
+<ul>
+<li><strong>ffmpeg</strong> (already on the build box): peak / RMS / DC via <code>astats</code>; loudness via <code>ebur128</code>; silences via <code>silencedetect</code>; rough bandwidth via a high-pass then RMS; hum via a narrow bandpass at 50 Hz then RMS.</li>
+<li>Example: <code>ffmpeg -i file.mp3 -af "astats=metadata=1:reset=0,ebur128=framelog=verbose,silencedetect=noise=-50dB:d=0.5" -f null -</code></li>
+<li>Example bandwidth probe: <code>ffmpeg -i file.mp3 -af "highpass=f=16000,astats=metadata=1:reset=0" -f null -</code></li>
+<li><strong>sox</strong> (install if needed): <code>sox file.wav -n stat</code>, <code>sox file.wav -n spectrogram -o spec.png</code>.</li>
+<li><strong>Audacity:</strong> Spectrogram view for lowpass walls, hum bars, and click spikes. Free and VoiceOver-usable on desktop with care.</li>
+<li><strong>Python + librosa</strong> (optional): load audio, plot spectral centroid / rolloff, detect repeated motifs for “memorable crackle” loop problems.</li>
+</ul>
+<p>Practical thresholds used in this pass (recommendation, not law): flag peaks warmer than about −1 dBFS; flag |DC| above 0.01; treat “RMS above 16 kHz below about −70 dB” as likely dull/transcoded; treat a 50 Hz band only about 10–12 dB below full-band RMS as audible hum risk after boost; prefer nature beds encoded at 96 kbps AAC/Opus or higher rather than thin 64 kbps MP3 when size allows.</p>
+
+<h3>Quality check results on Night Fire files (9 November 2026)</h3>
+<p>Tools: ffmpeg 7.1.5, <code>astats</code> + <code>ebur128</code> + high-pass / bandpass probes. Raw sources in <code>/workspace/nightfire/raw/</code>; encoded chunks in <code>/workspace/nightfire/enc/</code>.</p>
+<ul>
+<li><strong>Fire encode chunks (fire_00–fire_14):</strong> several peaks within 1 dB of full scale (worst about −0.18 dBFS on fire_11). The encode script uses a limiter at 0.89 linear, so crackles are riding the ceiling. Not hard-clipped into digital shredding on every file, but too hot for comfort. Recommendation: lower fire makeup gain a little or raise limiter headroom.</li>
+<li><strong>Wind encode chunks:</strong> source 477187 is extremely quiet (about −56 LUFS integrated on the analysed segment), so encode applies about +23 to +27 dB of gain. After that boost, a 50 Hz band sits only about 11 dB below the full-band RMS — a clear mains-hum risk. High-frequency energy above 16 kHz is also weak on several wind chunks. Recommendation: notch 50/100 Hz gently, or replace with a cleaner CC0 wind; avoid more gain.</li>
+<li><strong>Cicadas encode:</strong> healthiest set. Strong high-frequency energy, peaks well clear of 0 dB, loudness near target. No serious flags.</li>
+<li><strong>Crickets encode:</strong> acceptable. Mild low energy above 16 kHz on one chunk; not catastrophic. Source is Freesound 522299 (CC0), confirmed live.</li>
+<li><strong>Raw 410917 (unused alternate fire):</strong> peak about −0.48 dBFS and silence events detected — treat as hotter and less steady than 501417.</li>
+<li><strong>Raw 454367 (unused alternate wind):</strong> very quiet and essentially dead above 16 kHz on the probe — poor candidate compared with 477187, and 477187 itself already needs cleaning.</li>
+<li><strong>Bitrate:</strong> encoded beds are MP3 at 64–80 kbps. Fine for a small web pack, but MP3 padding and lowpass hurt seamless looping on iOS if you ever fall back to HTML <code>&lt;audio loop&gt;</code>. Night Fire’s Web Audio buffer approach is the right direction.</li>
+</ul>
+<p>Honest summary: nothing in the live favourite set is “corrupted” into unusable noise, but fire is hotter than ideal and wind carries boosted quiet-source problems (hum / dull highs). Cicadas are the quality winner of the four.</p>
+<p><a href="#main">Back to start of report</a></p>
+</section>
+
+<section aria-labelledby="section-4">
+<h2 id="section-4">New sound variety beyond fire, crickets, cicadas and wind</h2>
+<p>Original Sound Sanctuary already covers generic rain, stream, ocean, birds, underwater, train, dolphins and boat. Night Fire specialises the favourite fire–insect–wind night. New material should deepen night scenes and add weather and wildlife Ahsan does not already have as first-class layers.</p>
+
+<h3>Recommended new categories</h3>
+<ul>
+<li>Rain variants: on tent / tarp, on leaves, on roof or skylight (distinct from the existing general rain bed).</li>
+<li>Thunder and rain-with-distant-thunder (sparse one-shots over a bed, not a constant crash loop).</li>
+<li>Frogs / toads at night; owls; European nightjar; loons; dawn chorus (morning counterpart to the night favourite).</li>
+<li>Cave drips; rustling leaves or dry grass; snow / ice underfoot or wind over snow.</li>
+<li>Distant bells (use sparingly; can feel human rather than wild).</li>
+<li>Cat purr (comfort / companion layer, not wilderness — still valuable for sleep).</li>
+<li>Whale song only if clearly different from the existing dolphin layer and licensed cleanly.</li>
+</ul>
+
+<h3>Night-friendly set ideas pairing with fire + crickets + cicadas + wind</h3>
+<ol>
+<li><strong>Storm at the fire:</strong> keep fire and wind; add sparse distant thunder one-shots; optional light rain-on-leaves under the insects.</li>
+<li><strong>Pond night:</strong> frogs + soft wind + distant owl; fire optional or very low.</li>
+<li><strong>Camp tarp:</strong> rain on tent as bed; wind; rare thunder; crickets low.</li>
+<li><strong>Pre-dawn:</strong> nightjar or owl accents over wind; fade insects; introduce dawn chorus only as a timed “morning” scene.</li>
+<li><strong>Soft companion:</strong> fire + cat purr + very low wind (domestic calm, still sound-first).</li>
+</ol>
+
+<h3>Specific CC0 recordings verified live (HTTP 200, licence CC0 on page)</h3>
+<ul>
+<li>Distant thunder — <a href="https://freesound.org/people/richwise/sounds/361401/">Freesound 361401 by richwise</a> (about 7 minutes).</li>
+<li>Thunder with gentle rain — <a href="https://freesound.org/people/wwstudioswastaken/sounds/641055/">Freesound 641055</a>; rainstorm with distant thunder — <a href="https://freesound.org/people/hairpin79/sounds/317481/">Freesound 317481</a>.</li>
+<li>Rain on tent / tarp — <a href="https://freesound.org/people/wrowley/sounds/872373/">872373</a>, <a href="https://freesound.org/people/dr19/sounds/457594/">457594</a>, loop-friendly <a href="https://freesound.org/people/Bronxio/sounds/397916/">397916</a>.</li>
+<li>Rain on leaves — <a href="https://freesound.org/people/newtad1/sounds/836411/">836411</a>, <a href="https://freesound.org/people/madamdata/sounds/719747/">719747</a>.</li>
+<li>Rain on roof / window — <a href="https://freesound.org/people/bassimat/sounds/833924/">833924</a> (long take, about 14 minutes).</li>
+<li>Small forest stream — <a href="https://freesound.org/people/Cinetony/sounds/559955/">559955</a> (note: original app already has a stream; use only if this recording is clearly better).</li>
+<li>Shingle beach waves — <a href="https://freesound.org/people/Mr_Lamppost/sounds/800900/">800900</a> (distinct from smooth sand ocean).</li>
+<li>Night frogs — <a href="https://freesound.org/people/felix.blume/sounds/868747/">868747</a> (long).</li>
+<li>Tawny owl — <a href="https://freesound.org/people/Patrick_Corra/sounds/745208/">745208</a> (short; treat as one-shot accents).</li>
+<li>Dawn chorus — <a href="https://freesound.org/people/SamsterBirdies/sounds/745273/">745273</a>.</li>
+<li>European nightjar — <a href="https://freesound.org/people/jjbubo/sounds/474859/">474859</a>.</li>
+<li>Loons — <a href="https://freesound.org/people/itinerantmonk108/sounds/751848/">751848</a>.</li>
+<li>Cave drips — <a href="https://freesound.org/people/Sclolex/sounds/177958/">177958</a>.</li>
+<li>Leaves rustling — <a href="https://freesound.org/people/ericnorcross81/sounds/570759/">570759</a>.</li>
+<li>Cat purr — <a href="https://freesound.org/people/willungawillunga/sounds/577410/">577410</a>.</li>
+<li>Distant church bells with nature/urban bed — <a href="https://freesound.org/people/Julian_Eftei/sounds/830060/">830060</a> (listen for traffic before shipping).</li>
+</ul>
+<p>Public-domain NPS alternatives (credit National Park Service): <a href="https://www.nps.gov/yell/learn/photosmultimedia/sounds-thunder.htm">Yellowstone thunder MP3</a>, <a href="https://www.nps.gov/yell/learn/photosmultimedia/sounds-chorusfrogs.htm">Yellowstone chorus frogs</a>, <a href="https://www.nps.gov/yell/learn/photosmultimedia/sounds-dawnchorus.htm">Yellowstone dawn chorus</a>, <a href="https://www.nps.gov/yell/learn/photosmultimedia/sounds-commonloon.htm">Yellowstone common loon</a>. Rocky Mountain’s library adds thunderstorm and frog soundscapes on its index page.</p>
+<p><a href="#main">Back to start of report</a></p>
+</section>
+
+<section aria-labelledby="section-5">
+<h2 id="section-5">Seamless looping design</h2>
+<p>Recommendation — treat looping as design, not as “tick the loop checkbox”.</p>
+<ul>
+<li>Cut on near-zero crossings; match spectral content at join points.</li>
+<li>Prefer equal-power crossfades baked into the file, or overlapping buffer playback (Night Fire already crossfades passages).</li>
+<li>Choose steady sections; reject a single distinctive crackle, bird phrase or cough that will advertise the loop every 40 seconds.</li>
+<li>Prefer longer loops (two to ten minutes) or many shuffled chunks over one short obvious loop.</li>
+<li>Best pattern for nature: a steady bed plus randomised one-shots (thunder, owl, bowl) scheduled stochastically — what Night Fire already does with shuffle, drift and quiet cut points.</li>
+<li>Match loudness between chunks (LUFS), not only peak.</li>
+</ul>
+<p>Web Audio on iPhone (researched practice + current app code):</p>
+<ul>
+<li>Decode to <code>AudioBuffer</code>, play with <code>AudioBufferSourceNode</code>, overlap with gain envelopes. Night Fire already follows this.</li>
+<li><code>loop</code>, <code>loopStart</code> and <code>loopEnd</code> work for steady buffers (noise, drones). For field recordings, overlapped one-shots usually sound more natural than a single short loop.</li>
+<li>Avoid HTMLMediaElement <code>loop</code> for meditation beds on iOS — gap and MP3 padding clicks are common.</li>
+<li>Gapless-friendly formats: prefer AAC/M4A or WAV/CAF for iOS; Opus is excellent but support depends on context. MP3 is convenient but padded; if MP3 must be used, hide joins with crossfades in Web Audio (as now).</li>
+</ul>
+<p>Concrete ffmpeg recipe for a crossfaded loop file of length L with crossfade X seconds (example L=60, X=4):</p>
+<ol>
+<li>Trim a steady region longer than L+X.</li>
+<li><code>ffmpeg -i in.wav -ss START -t 64 -af "afade=t=in:st=0:d=4,afade=t=out:st=60:d=4" mid.wav</code> (adjust times so the fade-out of the end overlaps the fade-in of the start when wrapped).</li>
+<li>Or build an explicit overlap: take the last X seconds and first X seconds, crossfade with <code>acrossfade</code>, then concatenate the middle. Example pattern: split head/mid/tail; <code>ffmpeg -i tail.wav -i head.wav -filter_complex "acrossfade=d=4:c1=tri:c2=tri" join.wav</code>; then concatenate mid + join carefully so total length is L.</li>
+<li>Normalise: <code>ffmpeg -i loop.wav -af "loudnorm=I=-28:TP=-2:LRA=8" -c:a aac -b:a 128k loop.m4a</code>.</li>
+</ol>
+<p>Recommendation: keep Night Fire’s chunk-shuffle model for beds; use baked crossfade loops only for very steady textures (soft rain, brown-noise-like wind) where shuffle variety is less important.</p>
+<p><a href="#main">Back to start of report</a></p>
+</section>
+
+<section aria-labelledby="section-6">
+<h2 id="section-6">Augmentations for a blind, sound-only user</h2>
+<p>Recommendation — every feature must make sense with VoiceOver and with the screen off.</p>
+<ul>
+<li><strong>Spatial / binaural placement:</strong> Night Fire already has headphone-oriented tones. Extend nature layers with gentle stereo width and occasional HRTF-style pans for one-shots (owl left-rear, thunder far). Keep a mono/safe mode for speaker listening.</li>
+<li><strong>Randomised scene evolution:</strong> slow drift of levels and which insect chunk is active (already partly present). Announce “scene settled” only if the user asks; do not chatter.</li>
+<li><strong>Sleep timer with fade:</strong> already present in presets; make fade length easy to change and speak the remaining time on request.</li>
+<li><strong>Spoken menus and presets:</strong> short scene names and one-sentence descriptions (“Night by the fire: crackle, crickets, cicadas, wind”). Offer a “describe current mix” button.</li>
+<li><strong>VoiceOver-friendly controls:</strong> labelled sliders with spoken percentages; group nature layers under one rotor-friendly region; avoid custom gestures that fight VoiceOver.</li>
+<li><strong>Haptics:</strong> iOS Safari web apps have little reliable haptic control — do not depend on vibration.</li>
+<li><strong>Background audio / lock screen:</strong> iOS Safari can suspend audio; Web Audio often needs a foreground unlock. Document “keep Safari open” honestly; consider a lightweight installed PWA only if Media Session and background behaviour are re-tested on iPhone 11. Prefer clear spoken warnings over false promises.</li>
+<li><strong>Save favourite mixes:</strong> local save already exists; add named slots (“My storm fire”) and an exportable text summary of settings for backup.</li>
+<li><strong>Surprise me:</strong> one button that builds a legal mix from favourite-compatible layers with spoken confirmation before starting.</li>
+<li><strong>Time-of-day scenes:</strong> Night fire; late storm; pre-dawn nightjar; morning chorus. Optional clock suggestion, never forced auto-switch while sleeping unless requested.</li>
+<li><strong>Gentle spoken scene descriptions:</strong> optional, off by default, so sleep is not broken.</li>
+<li><strong>Volume sliders:</strong> large hit targets, value text always available to VoiceOver, master separate from nature master.</li>
+<li><strong>Battery / data:</strong> prefer downloaded packs (Night Fire model) over streaming; offer a “low data / fewer chunks” mode; warn that continuous Web Audio with the screen on uses battery.</li>
+</ul>
+<p><a href="#main">Back to start of report</a></p>
+</section>
+
+<section aria-labelledby="section-7">
+<h2 id="section-7">Prioritised improvements (top 10)</h2>
+<p>Highest value and lowest effort first. Recommendations only — no build in this task.</p>
+<ol>
+<li><strong>Fix fire headroom and wind hum on the existing favourite set.</strong> Small encode change; immediate nightly listening benefit. Rationale: quality check found hot fire peaks and boosted wind hum.</li>
+<li><strong>Add rain-on-tent and distant-thunder as optional layers that combine with fire + insects + wind.</strong> Uses verified CC0 files; extends the loved night scene without abandoning it.</li>
+<li><strong>Add a “describe current mix” and clearer preset spoken blurbs.</strong> Pure accessibility win on iPhone VoiceOver; no new audio assets required.</li>
+<li><strong>Named favourite slots plus Surprise me (favourite-safe).</strong> High delight, mostly UI logic on top of existing engines.</li>
+<li><strong>Frog night and tawny owl accent packs (CC0 / NPS).</strong> New wildlife colour for night listening; owl as sparse one-shots avoids loop boredom.</li>
+<li><strong>Re-encode beds as AAC/M4A at higher bitrate while keeping Web Audio crossfades.</strong> Reduces MP3 artefacts; still offline-friendly if packs stay size-aware.</li>
+<li><strong>Time-of-day scene set: Night fire / Storm / Pre-dawn / Dawn chorus.</strong> Gives structure without forcing the user to build mixes from scratch.</li>
+<li><strong>Cave drips + soft leaves as quiet “detail” layers.</strong> Low CPU, high immersion when sparsely scheduled.</li>
+<li><strong>Document and harden iOS background / lock-screen behaviour, with honest limits.</strong> Prevents frustration more than any new bird call.</li>
+<li><strong>Write a sourcing checklist into the credits/build notes: CC0/NPS first; never BBC RemArc, Macaulay free, or NC for commercial paths.</strong> Protects the planned business before more packs are added.</li>
+</ol>
+<p><a href="#main">Back to start of report</a></p>
+</section>
+
+<section aria-labelledby="section-8">
+<h2 id="section-8">Sources checked</h2>
+<ul>
+<li>Local: <code>/workspace/nightfire/NOTES.md</code>, <code>enc.py</code>, <code>enc/meta.json</code>, <code>raw/*.json</code>, <code>app/html_credits.html</code>, <code>app/js_data.js</code>, <code>app/js_nat.js</code>; <code>/workspace/brainwave/NOTES-v2.md</code>, <code>analysis/spec.json</code>.</li>
+<li>Licence and library pages fetched or HTTP-checked on 9 November 2026, including Freesound FAQ, CC0/CC-BY/CC-BY-NC deed pages, Sonniss GDC licence, Pixabay licence summary, BBC sound-effects contact page, BBC Rewind site, NPS Yellowstone / Rocky Mountain / Natural Sounds pages, xeno-canto terms, Macaulay help, Wikimedia Commons USFWS audio category, Internet Archive open audio, British Library terms.</li>
+<li>Candidate Freesound and NPS media URLs listed above returned HTTP 200 unless noted.</li>
+</ul>
+<p>End of research report. No app files were modified.</p>
+<p><a href="#main">Back to start of report</a></p>
+</section>
+</main>
+</body>
+</html>

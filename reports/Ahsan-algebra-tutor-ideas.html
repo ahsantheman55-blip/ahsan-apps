@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahsan’s Algebra Tutor — Ideas and Research Report</title>
+<style>
+body{max-width:55rem;margin:2rem auto;padding:0 1rem;font:1.1rem/1.65 system-ui,sans-serif;color:#171717;background:white}
+h1,h2{line-height:1.25}
+section{margin-top:2.5rem}
+a{color:#0645ad}
+a:focus{outline:3px solid;outline-offset:4px}
+</style>
+</head>
+<body>
+<a href="#main">Skip to report</a>
+<header>
+<h1>Ahsan’s Algebra Tutor — Ideas and Research Report</h1>
+<p>Ideas and research only. No app build, no implementation claim. Prepared for Ahsan Ali (totally blind, iPhone 11 with VoiceOver, British English, one-finger touch typing). Status date: 9 November 2026, Europe/London.</p>
+<p>How to read this: <strong>Confirmed preference</strong> means something already chosen for the chess teacher pattern or stated for this tutor. <strong>Researched</strong> means verified from a named public source. <strong>Recommendation</strong> means a design suggestion, not a requirement.</p>
+</header>
+<nav aria-label="Contents">
+<h2>Contents</h2>
+<ol>
+<li><a href="#section-1">Purpose, chess parallel and status</a></li>
+<li><a href="#section-2">Core features</a></li>
+<li><a href="#section-3">Accessibility for blind users</a></li>
+<li><a href="#section-4">Progressive difficulty</a></li>
+<li><a href="#section-5">When the tutor steps in versus stays quiet</a></li>
+<li><a href="#section-6">Input methods for one-finger touch typing</a></li>
+<li><a href="#section-7">Existing approaches worth studying</a></li>
+<li><a href="#section-8">Open questions for Ahsan</a></li>
+<li><a href="#section-9">Recommended first increment</a></li>
+</ol>
+</nav>
+<main id="main" tabindex="-1">
+
+<section aria-labelledby="section-1">
+<h2 id="section-1">Purpose, chess parallel and status</h2>
+<p>Confirmed preference: Ahsan wants an ultimate algebra tutor in the same spirit as the chess teacher. The chess app puts a playable board first and gathers coaching under one Help button, with tap-only advice and a blunt intellectual coaching voice. The algebra equivalent should let him work independently once he is good enough, and put advice under Help rather than interrupting him.</p>
+<p>Recommendation: treat the problem workspace as the “board”. Solving is the main activity. Help holds hints, worked examples, mistake recaps, progress, and deeper coaching. The tutor advises; it does not take over the pen.</p>
+<p>This report gathers structured ideas and verified research. It is not a build plan with dates, and it does not start coding.</p>
+<p><a href="#main">Back to start of report</a></p>
+</section>
+
+<section aria-labelledby="section-2">
+<h2 id="section-2">Core features</h2>
+<p>Recommendation — keep a small set of powerful tools rather than many tiny buttons:</p>
+<ol>
+<li><strong>Problem workspace.</strong> One clear problem at a time, fully readable by VoiceOver. Show the original statement, the current working line, and a short step history the user can reread. Correctness checking of each submitted step or final answer.</li>
+<li><strong>Step-by-step solving.</strong> Allow entry of intermediate lines (for example expand, collect like terms, divide both sides), not only a final boxed answer. This matches how algebra is actually done and helps memory by externalising working.</li>
+<li><strong>Hints ladder under Help.</strong> Tap-requested levels: light nudge, name the principle, show the next move without full solution, then a full worked solution. Never dump the answer first.</li>
+<li><strong>Worked examples.</strong> Short sermon-voiced walkthroughs of the same skill, not quizzes. Tell him what went wrong in similar mistakes and what a careful solver would do.</li>
+<li><strong>Review and recap of recent mistakes.</strong> On request only: the last three or four error patterns (sign errors, lost brackets, wrong operation on both sides, incomplete factoring, and so on), with a blunt explanation and one recovery drill.</li>
+<li><strong>Progress tracking.</strong> Quiet skill bars or mastery markers by topic. No cheerleading. Quiet confirmation when a skill is solid; blunt honesty when it is not.</li>
+</ol>
+<p>Recommendation — Help submenu sketch (subject to Ahsan’s preference): Hint; Worked example; What went wrong (mistake recap); Compare my steps to a model solution; Topic map and progress; Speak the expression term by term; Syntax help for typing maths.</p>
+<p><a href="#main">Back to start of report</a></p>
+</section>
+
+<section aria-labelledby="section-3">
+<h2 id="section-3">Accessibility for blind users</h2>
+<p>Confirmed preference: blind user is primary. The interface must work with VoiceOver on an iPhone 11. Audio-supported design is fine; audio-only without text equivalents is not.</p>
+<p>Recommendation — structure:</p>
+<ul>
+<li>Semantic headings, labelled buttons, one main landmark, skip link, logical focus order.</li>
+<li>No information carried only by layout, colour, or a drawn equation image.</li>
+<li>Every expression available as readable text and, where practical, as MathML for quality speech.</li>
+<li>Reread controls for the problem, current line, full working, and last feedback.</li>
+</ul>
+<p>Researched — speaking maths unambiguously:</p>
+<ul>
+<li><a href="https://www.seewritehear.com/accessible-mathml/mathspeak/examples/quick-tutorial/">MathSpeak quick tutorial (SeeWriteHear)</a>: verbose MathSpeak uses boundary words such as “start fraction … over … end fraction”, and “superscript” with “baseline” to return to the main line. That reduces ambiguity in nested fractions and powers.</li>
+<li><a href="https://doi.org/10.1002/ets2.12103">ClearSpeak research (ETS, via DOI)</a> and MathCAT’s default ClearSpeak style aim for classroom-like speech (“x to the fourth power”, “the fraction with numerator … and denominator …”), with verbosity options for unambiguous reading. MathCAT documents ClearSpeak as the default speech style and SimpleSpeak as a more concise alternative (<a href="https://daisy.github.io/MathCAT/users.html">MathCAT user guide</a>).</li>
+</ul>
+<p>Recommendation: default to unambiguous speech for algebra training (ClearSpeak verbose, or MathSpeak-style boundaries for nested work). Offer a shorter style later if Ahsan wants speed. Always announce brackets, fraction starts and ends, and exponent starts and ends when nesting is present. Example: “(2x + 3) / (x − 1)” should not be left as “2 x plus 3 slash x minus 1” without boundaries.</p>
+<p>Recommendation — navigating inside an expression: support term-by-term and sub-expression navigation (whole expression, then left/right side of an equation, then terms, then factors). MathJax’s explorer and MathCAT navigation show that term-by-term exploration is a proven pattern for screen-reader maths (<a href="https://docs.mathjax.org/en/stable/basic/accessibility.html">MathJax accessibility features</a>; <a href="https://daisy.github.io/MathCAT/">MathCAT overview</a>).</p>
+<p>Researched — braille: in the UK, Unified English Braille incorporates maths and science signs; RNIB states there is no longer a separate specialist maths code in the UK (<a href="https://www.rnib.org.uk/living-with-sight-loss/education-and-learning/braille-tactile-codes/braille-codes/specialist-braille-codes-explained/">RNIB specialist braille codes</a>). Nemeth remains important in the US and in many tools. MathCAT and Desmos both support Nemeth and UEB maths braille on refreshable displays. Recommendation: design so a future braille path is possible (structured MathML or equivalent), but do not block a first web build on braille hardware testing.</p>
+<p>Recommendation — avoid visual-only notation: no reliance on spatially aligned “balance” diagrams without a spoken equivalent; no unmarked colour highlighting of like terms; no screenshots of worksheets as the only problem source.</p>
+<p><a href="#main">Back to start of report</a></p>
+</section>
+
+<section aria-labelledby="section-4">
+<h2 id="section-4">Progressive difficulty</h2>
+<p>Recommendation — a practical algebra ladder for a club-minded adult learner refreshing school algebra (adjust after Ahsan’s level check):</p>
+<ol>
+<li>Expressions: like terms, expanding brackets, simple factoring.</li>
+<li>Linear equations in one unknown, including with brackets and fractions.</li>
+<li>Linear inequalities and number-line meaning spoken in words.</li>
+<li>Simultaneous linear equations (elimination and substitution explained in speech).</li>
+<li>Quadratics: expanding, factoring, completing the square, quadratic formula, with careful speech for roots and discriminants.</li>
+<li>Algebraic fractions and rearranging formulae.</li>
+<li>Optional later: functions, exponentials, logs, sequences — only if wanted.</li>
+</ol>
+<p>Recommendation — mastery checks: a short set of mixed problems per skill, done without hints. Mastery means recent independent success, not a single lucky answer. Failed items return to that skill’s worked examples and drills. The tutor may suggest the next topic under Help, but should not auto-advance in a way that yanks control away.</p>
+<p><a href="#main">Back to start of report</a></p>
+</section>
+
+<section aria-labelledby="section-5">
+<h2 id="section-5">When the tutor steps in versus stays quiet</h2>
+<p>Confirmed preference from chess: tap-only coaching; nothing automatic. Essential action feedback (accepted step, rejected syntax, correct or incorrect final answer) is not coaching and should always be announced.</p>
+<p>Recommendation — default quiet mode:</p>
+<ul>
+<li>Advice, hints, recaps and worked examples appear only when Help is used.</li>
+<li>No live nagging after every slip.</li>
+</ul>
+<p>Recommendation — optional “watch my back” mode, off by default: after a repeated error pattern (for example three similar sign errors in one session), Help can show a badge or a single polite notice that a pattern was detected, still requiring a tap to hear the sermon. This mirrors the chess idea that the advisory layer steps in when the user is truly lost, without constant commentary.</p>
+<p>Researched context: intelligent tutoring systems such as Carnegie Learning’s Cognitive Tutor / MATHia monitor skill mastery continuously and give just-in-time hints (<a href="https://www.carnegielearning.com/solutions/math/mathia">MATHia product page</a>; Cognitive Tutor research summarised by <a href="https://www.rand.org/pubs/research_briefs/RB9746.html">RAND</a>). ASSISTments research compared scaffolding questions with on-demand hints; scaffolding can help, but some students found forced scaffolds frustrating (<a href="https://web.cs.wpi.edu/~leenar/publications/ITS2006cr1.pdf">Scaffolding vs. Hints in the Assistment System (PDF)</a>). Recommendation for Ahsan: prefer on-demand hints and optional scaffolding under Help, not forced multi-step interrogation after every mistake — that matches his chess preference and the “work independently once good enough” goal.</p>
+<p>Recommendation — fading support: as mastery rises, the default hint ladder starts one rung higher (nudge rather than full next-step), and “What went wrong” becomes shorter. When struggling, the ladder deepens again. The voice stays didactic; it does not turn into cheerleading.</p>
+<p><a href="#main">Back to start of report</a></p>
+</section>
+
+<section aria-labelledby="section-6">
+<h2 id="section-6">Input methods for one-finger touch typing</h2>
+<p>Confirmed context: one-finger typing on an iPhone touchscreen is slow and error-prone for dense symbols. Dictation often mangles algebra.</p>
+<p>Recommendation — primary input: linear text syntax in a single field, for example <code>2x^2 + 3x = 5</code>, <code>(2x+3)/(x-1)</code>, <code>sqrt(x+1)</code>. Announce a short syntax card under Help. Accept common variants (<code>**</code> or <code>^</code> for powers; optional implicit multiplication rules stated clearly).</p>
+<p>Recommendation — compact custom maths keypad: a small set of VoiceOver-reachable buttons for common tokens (plus, minus, times, divide, equals, brackets, caret, fraction template, square root, x, y, undo, speak expression). Keep the keypad short so swipe exploration stays manageable. Do not require hunting through the full iOS symbols keyboard for every operator.</p>
+<p>Recommendation — step entry versus whole-answer entry: both. Default to step entry for training; allow “submit final answer” for timed confidence checks later if wanted.</p>
+<p>Recommendation — undo and syntax tolerance: always-available undo of the last token or last line; clear spoken parse errors (“I could not read the second closing bracket”); do not punish a correct mathematical idea for a missing asterisk if the parse is unambiguous. Dictation remains optional secondary input, never the only path.</p>
+<p><a href="#main">Back to start of report</a></p>
+</section>
+
+<section aria-labelledby="section-7">
+<h2 id="section-7">Existing approaches worth studying</h2>
+<p>Only items checked for this report are listed. Each note separates what was verified from why it may matter.</p>
+<ol>
+<li><strong>MathCAT</strong> — <a href="https://daisy.github.io/MathCAT/">MathCAT site</a>. Researched: open library converting MathML to speech, braille (including Nemeth and UEB Technical) and navigation; ClearSpeak default; built into NVDA 2026.1. Useful for speech-quality and navigation design ideas. Limitation for an iPhone web app: MathCAT is primarily an AT library (NVDA, JAWS, Orca, and others), not a drop-in iOS VoiceOver engine; a web app would more likely use MathML plus browser/MathJax speech patterns, or a server-side/WASM approach if pursued later.</li>
+<li><strong>MathJax accessibility / Speech Rule Engine</strong> — <a href="https://docs.mathjax.org/en/stable/basic/accessibility.html">MathJax accessibility docs</a>. Researched: generates speech and braille labels, supports expression exploration term by term, works across screen readers via ARIA labels. Useful as a practical web rendering path for spoken algebra. Limitation: configuring styles and ensuring reliable VoiceOver behaviour on iOS still needs real-device testing.</li>
+<li><strong>ClearSpeak and MathSpeak</strong> — ClearSpeak ETS paper <a href="https://doi.org/10.1002/ets2.12103">DOI 10.1002/ets2.12103</a>; MathSpeak tutorial <a href="https://www.seewritehear.com/accessible-mathml/mathspeak/examples/quick-tutorial/">SeeWriteHear</a>. Researched: two established conventions for unambiguous maths speech. Useful as the speech style rulebook for the tutor. Limitation: defaults can still be ambiguous unless verbosity or boundary words are turned up.</li>
+<li><strong>Desmos accessibility</strong> — <a href="https://help.desmos.com/hc/en-us/articles/4404860698253-Introduction-to-Accessibility-Features">Desmos accessibility introduction</a>. Researched: screen-reader-aware equation reading, keyboard access, audio trace for graphs, Nemeth and UEB braille modes. Useful reference for expression editing and optional graph sonification later. Limitation: Desmos is a calculator/graphing environment, not an algebra teacher with sermon coaching; audio trace helps graphs more than equation solving pedagogy.</li>
+<li><strong>Khan Academy</strong> — <a href="https://support.khanacademy.org/hc/en-us/articles/203617664-Does-Khan-Academy-provide-audio-support-or-read-aloud-for-its-content">Khan Academy screen reader guidance</a>. Researched: supports screen readers; recommends NVDA with Chrome and MathPlayer or MathCAT for equations; VoiceOver with Safari on iOS is listed. Useful as a content and practice-structure reference. Limitation: not built as a blunt personal coach under one Help button; equation access depends on the AT stack; Khan states it prioritises screen-reader cases over third-party read-aloud tools.</li>
+<li><strong>Photomath / Mathway-style camera solvers</strong>. Researched limitation: these products are organised around photographing printed or handwritten problems. For a totally blind user, aiming a camera at ink is a poor primary workflow. Treat them as contrast cases (instant answers, visual capture) rather than models to copy. Prefer typed or structured input and teaching steps over “point phone at worksheet”.</li>
+<li><strong>Carnegie Learning MATHia / Cognitive Tutor</strong> — <a href="https://www.carnegielearning.com/solutions/math/mathia">MATHia</a>; <a href="https://www.rand.org/pubs/research_briefs/RB9746.html">RAND brief on Cognitive Tutor Algebra I</a>. Researched: skill-by-skill cognitive modelling, adaptive hints, mastery tracking; large-scale study found benefits emerging in the second year of school implementation for high schools. Useful ideas: knowledge tracing, hint ladders, mastery. Limitation: commercial classroom product; feedback model is more continuous than Ahsan’s tap-only preference; accessibility for VoiceOver-first mobile use is not established in the sources reviewed here.</li>
+<li><strong>ASSISTments</strong> — <a href="https://www.assistments.org/">ASSISTments site</a>; scaffolding research PDF linked above. Researched: free practice platform with immediate feedback, hints and explanations; research tradition on hints versus scaffolding. Useful for hint design and mistake-driven practice. Limitation: teacher-paced school tool, not a personal sermon-voiced coach.</li>
+<li><strong>Nemeth and UEB maths braille</strong> — RNIB UK note linked above; MathCAT and Desmos braille support. Researched: UK practice centres on UEB for maths; Nemeth remains widely supported in US tooling. Useful if Ahsan uses or later adds a braille display. Limitation: braille display ownership and preference are unknown; do not assume Nemeth fluency for a UK user.</li>
+</ol>
+<p><a href="#main">Back to start of report</a></p>
+</section>
+
+<section aria-labelledby="section-8">
+<h2 id="section-8">Open questions for Ahsan</h2>
+<ol>
+<li>Which algebra level should the first build target (refresh of basics, GCSE-style, or harder)?</li>
+<li>Keep the chess sermon voice for algebra, or a slightly calmer didactic voice?</li>
+<li>Strict tap-only forever, or allow an optional “watch my back” notice after repeated mistakes?</li>
+<li>Is a braille display part of the plan, or is VoiceOver speech enough for version one?</li>
+<li>Any topics you particularly want early (quadratics, simultaneous equations, rearranging formulae)?</li>
+</ol>
+<p><a href="#main">Back to start of report</a></p>
+</section>
+
+<section aria-labelledby="section-9">
+<h2 id="section-9">Recommended first increment</h2>
+<p>Recommendation only — mirror the chess incremental approach:</p>
+<ol>
+<li>Accessible workspace: problem text, linear input, step list, VoiceOver-friendly controls, unambiguous speech for the current expression.</li>
+<li>Legal-or-correct checking for submitted steps and answers on a small linear-equation set.</li>
+<li>Help button with a three-rung hint ladder and one worked example type.</li>
+<li>Then layer mistake recap, progress, richer topics, and keypad polish.</li>
+</ol>
+<p>Do not build until Ahsan confirms this direction and answers the open questions he cares about.</p>
+<p><a href="#main">Back to start of report</a></p>
+</section>
+
+</main>
+</body>
+</html>

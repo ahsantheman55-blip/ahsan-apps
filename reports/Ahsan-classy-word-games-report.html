@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventing Classy Word Games: A Report for Ahsan Ali</title>
+  <style>
+    :root {
+      --ink: #1c1612;
+      --paper: #f6f0e4;
+      --rule: #c4b59a;
+      --link: #6b2a1f;
+      --link-visited: #4a3048;
+      --heading: #3b2218;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: Georgia, "Palatino Linotype", Palatino, "Times New Roman", serif;
+      font-size: 1.125rem;
+      line-height: 1.65;
+    }
+    .skip-link {
+      position: absolute;
+      left: 0.5rem;
+      top: 0.5rem;
+      padding: 0.5rem 0.75rem;
+      background: var(--ink);
+      color: var(--paper);
+      text-decoration: underline;
+      z-index: 10;
+    }
+    .skip-link:not(:focus) {
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    a:focus, button:focus, .skip-link:focus {
+      outline: 3px solid var(--ink);
+      outline-offset: 3px;
+    }
+    a {
+      color: var(--link);
+      text-decoration: underline;
+    }
+    a:visited { color: var(--link-visited); }
+    header, nav, main, footer {
+      max-width: 42rem;
+      margin: 0 auto;
+      padding: 1.25rem 1.25rem 0;
+    }
+    footer {
+      padding-bottom: 3rem;
+      border-top: 1px solid var(--rule);
+      margin-top: 2.5rem;
+      font-size: 1rem;
+    }
+    header {
+      padding-top: 2rem;
+      border-bottom: 1px solid var(--rule);
+      padding-bottom: 1.25rem;
+    }
+    h1, h2, h3 {
+      color: var(--heading);
+      line-height: 1.3;
+      font-weight: 700;
+    }
+    h1 { font-size: 2rem; margin: 0 0 0.75rem; }
+    h2 {
+      font-size: 1.5rem;
+      margin: 2.25rem 0 0.75rem;
+      padding-top: 0.5rem;
+    }
+    h3 { font-size: 1.2rem; margin: 1.5rem 0 0.5rem; }
+    p { margin: 0 0 1rem; }
+    ul, ol { margin: 0 0 1rem; padding-left: 1.4rem; }
+    li { margin-bottom: 0.4rem; }
+    nav {
+      padding-bottom: 0.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    nav h2 { margin-top: 0.75rem; font-size: 1.25rem; }
+    .meta { font-size: 1rem; margin: 0 0 0.4rem; }
+    .source-list a { overflow-wrap: anywhere; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header>
+    <p class="meta">A report for Ahsan Ali</p>
+    <h1>Inventing Really Cool, Classy Word Games</h1>
+    <p class="meta">Especially games that improve the intellect. Prepared on 11 November 2026, Europe/London time.</p>
+  </header>
+
+  <nav aria-label="Contents">
+    <h2>Contents</h2>
+    <ol>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#classy-and-rewarding">What makes a word game classy and intellectually rewarding</a></li>
+      <li><a href="#historical-forms">Classic historical forms to draw on</a></li>
+      <li><a href="#method">A method for inventing a new word game</a></li>
+      <li><a href="#accessible-design">Design for audio, VoiceOver, and one-finger play</a></li>
+      <li><a href="#concepts">Fifteen original game concepts</a></li>
+      <li><a href="#app-and-business">From one idea to an app, and possible business angles</a></li>
+      <li><a href="#first-game">A recommended first game to prototype</a></li>
+      <li><a href="#closing">A last word</a></li>
+      <li><a href="#sources">Sources</a></li>
+    </ol>
+  </nav>
+
+  <main id="main">
+    <section aria-labelledby="introduction">
+      <h2 id="introduction">Introduction</h2>
+      <p>Dear Ahsan,</p>
+      <p>You asked for a report on how to invent really cool, classy word games, especially ones that improve the intellect. That is a fine brief, and it sits naturally beside the chess work you already enjoy: a teaching spirit, a love of clear structure, and a taste for something a little old-world rather than flashy. This report is written in that same spirit. It is meant to be read with VoiceOver, so the headings are there for navigation, the lists are simple, and there are no tables or pictures.</p>
+      <p>A classy word game is not a noisy quiz with a ticking clock. It is a small, fair problem in language: a twist of letters, a hidden sense, a precise choice of word. The pleasure is the moment when the fog lifts. That pleasure is old. Riddles, anagrams and acrostics have been with us for centuries. What is new is the chance to build such games so that they play beautifully on an iPhone, by ear, with one finger, and perhaps one day as the start of a small business.</p>
+      <p>One honest note before we begin. Word games really do exercise vocabulary, memory, attention and flexible thinking while you play them. That is valuable. What the research does not yet prove is that a puzzle app will raise general intelligence, or protect everyone against dementia. A classy inventor tells the truth about that, and still makes something worth playing for its own sake.</p>
+    </section>
+
+    <section aria-labelledby="classy-and-rewarding">
+      <h2 id="classy-and-rewarding">What makes a word game classy and intellectually rewarding</h2>
+
+      <h3>The marks of class</h3>
+      <p>A classy word game has a few recognisable virtues. They are closer to the manners of a good lesson than to the tricks of a fairground stall.</p>
+      <ul>
+        <li>One clear idea. The player should be able to hear the rules in two or three sentences and feel ready to try.</li>
+        <li>Fair play. Every clue or constraint must genuinely point to the answer. The British cryptic tradition calls this the fair clue: nothing is there only to confuse.</li>
+        <li>Wit in the material, not in the decoration. A good anagram or a neat double meaning is the ornament. Flashing banners and frantic timers are not.</li>
+        <li>Depth without clutter. A beginner can play at once. A practised player still finds a harder setting, a rarer word, or a finer shade of meaning.</li>
+        <li>A memorable finish. The answer, once found, should feel inevitable. The player thinks, of course it was that, and smiles.</li>
+        <li>Elegance of form. The game would still be itself if you played it in a quiet room, with a friend reading the clues aloud. If it dies when the colours are taken away, it was never a word game at heart.</li>
+      </ul>
+      <p>That last test matters especially for you. A game that can be played fairly by ear is not only more accessible. It is often more refined, because the designer has had to put all the interest into language itself.</p>
+
+      <h3>What the mind is doing</h3>
+      <p>Word games earn their keep by putting several mental skills to work at once. The best ones do not drill a single trick. They ask you to hold a little information, search your vocabulary, and sometimes throw out the first idea that came to mind.</p>
+      <p>Vocabulary is more than a heap of words. Each new word is a sound pattern, a spelling, a meaning, and a set of cousins: synonyms, opposites, and words that share a root. Alan Baddeley, Susan Gathercole and Costanza Papagno, in a much-cited 1998 paper, argued that a part of working memory called the phonological loop is especially important for learning new word forms. In plain terms, you hold an unfamiliar sound in mind long enough for it to settle. Games that make you turn a word over, say it, rearrange it, or match it to a meaning give that system useful work. The paper is “The phonological loop as a language learning device”, published in Psychological Review. You can read the abstract via <a href="https://doi.org/10.1037/0033-295x.105.1.158">the DOI record for Baddeley, Gathercole and Papagno, 1998</a>. Baddeley had already set out the wider working-memory model in <a href="https://www.science.org/doi/10.1126/science.1736359">a 1992 article in Science, “Working Memory”</a>.</p>
+      <p>Working memory is the mental juggle: holding letters already placed, a clue just heard, and a possible answer, while you test whether they fit. Crossword solving leans on this, together with vocabulary and search strategy. That does not mean any puzzle will enlarge working memory in a general way, like a muscle that then helps with every task in life. It means that a well-made word game keeps this system active, which is part of what makes the play feel mentally alive.</p>
+      <p>Lateral thinking is the other jewel. Many classy puzzles work by misdirection. The obvious reading of a clue is wrong, and the player must look again. Kathryn Friedlander and Philip Fine have argued that British cryptic crossword clues are a rich way to study insight, the “aha” or “penny drops” moment, because a good clue can be solved with a sudden shift of sense. Their paper, “The penny drops: investigating insight through the medium of cryptic crosswords”, is freely available from <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6037892/">PubMed Central</a>. A related, older idea is Sarnoff Mednick’s Remote Associates Test from 1962, in which three words must be linked by a fourth. The classic example is cottage, blue and Swiss, which meet in the word cheese. Mednick’s paper, “The associative basis of the creative process”, is recorded at <a href="https://doi.org/10.1037/h0048850">this DOI</a>. Games of this family train the habit of searching sideways, not only downwards.</p>
+
+      <h3>What the larger studies can and cannot say</h3>
+      <p>There is encouraging research on word puzzles, and it should be handled with care.</p>
+      <p>A large British study led from the University of Exeter, using the PROTECT cohort of older adults, found that people who did word puzzles more often also did better on tests of attention, reasoning and memory. The researchers noted especially strong associations on grammatical reasoning and short-term memory. They were careful to say that this does not prove puzzles reduce the risk of dementia, and that a clinical trial would be needed to show cause. The paper is Brooker and colleagues, 2019, “An online investigation of the relationship between the frequency of word puzzle use and cognitive function in a large sample of older adults”, in the International Journal of Geriatric Psychiatry. See <a href="https://pubmed.ncbi.nlm.nih.gov/30443984/">the PubMed record</a> and <a href="https://news-archive.exeter.ac.uk/2019/may/title_716265_en.html">the University of Exeter’s 2019 summary</a>.</p>
+      <p>A later randomised trial, published in 2022 in NEJM Evidence, compared web-based crossword training with computerised brain-training games in people with mild cognitive impairment. Over 78 weeks, the crossword group did better on a standard cognitive score, and showed a smaller decline on a measure of daily function. The study had no third group who did no training at all, so it shows that crosswords fared better than those particular games, not that crosswords beat doing nothing. The paper is Devanand and colleagues, “Computerized games versus crosswords training in mild cognitive impairment”. It is at <a href="https://evidence.nejm.org/doi/full/10.1056/EVIDoa2200121">NEJM Evidence</a> and <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10457124/">PubMed Central</a>.</p>
+      <p>A 2023 Australian cohort study in JAMA Network Open found that more frequent “active mental activities”, including games, cards, chess, crosswords and other puzzles, were associated with a lower risk of dementia over ten years. Again, this is an association in everyday life, not a proof that one app will produce that result. The article is <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2807256">“Lifestyle Enrichment in Later Life and Its Association With Dementia Risk”</a>.</p>
+      <p>Against this, a major review by Daniel Simons and colleagues in 2016, “Do ‘brain-training’ programs work?”, concluded that practice reliably improves the practised tasks, that evidence for nearby skills is weaker, and that evidence for distant everyday benefits is thin. Many commercial claims had run ahead of the data. The review is in Psychological Science in the Public Interest, and is introduced at <a href="https://www.psychologicalscience.org/publications/brain-training.html">the Association for Psychological Science</a>.</p>
+      <p>The wise lesson for an inventor is this. Do not sell a word game as medicine. Do sell it, if you sell it at all, as a civilised mental exercise: a way to grow a richer vocabulary, to practise flexible thinking, and to enjoy the insight that good clues provide. Those benefits are real in the playing. They are also honest.</p>
+    </section>
+
+    <section aria-labelledby="historical-forms">
+      <h2 id="historical-forms">Classic historical forms to draw on</h2>
+      <p>New games are rarely made from nothing. They are made by taking an old form, finding its inner spring, and setting that spring in a new frame. Here are the forms most worth stealing from, in the best scholarly sense of the word.</p>
+
+      <h3>Cryptic crosswords</h3>
+      <p>The British cryptic is perhaps the most classy word game still in daily use. In The Observer in 1926, Torquemada, whose ordinary name was Edward Powys Mathers, helped to establish the fully cryptic puzzle. Ximenes, Derrick Somerset Macnutt, later insisted on fairness: a clue should contain a definition and a second indication, and should lead, with justice, to one answer. A typical clue is a little poem of misdirection. “Broken heart produced earth (5)” leads to EARTH, because HEART is broken, that is, anagrammed, and earth is also defined. Learning the devices, anagrams, hidden words, containers, reversals, double definitions and sounds-like clues, is itself an education in attention.</p>
+
+      <h3>Anagrams</h3>
+      <p>Anagrams are ancient. Letters are treated as movable type. LISTEN and SILENT, or the old favourite ASTRONOMER and MOON STARER, show how a rearrangement can feel like a revelation. As a game, the anagram is strongest when the letter-play and the meaning shake hands, not when a random scramble is thrown at the player.</p>
+
+      <h3>Acrostics</h3>
+      <p>In an acrostic, the first letters of lines, or of answers, spell a hidden word or name. Victorian and earlier poets used them for dedications. As a puzzle, they give a second score: you may solve the parts, then suddenly read a message down the edge. That hidden order is very satisfying when heard as well as when seen, provided the game reads the accumulating letters aloud.</p>
+
+      <h3>Riddles</h3>
+      <p>Riddles are among the oldest literary games we have. The Exeter Book, an Anglo-Saxon manuscript, contains riddles of wonderful quality, including the book-moth that swallowed words and gained no wisdom. A riddle asks you to abandon the first picture that forms in the mind. That is close to the “stumper” used in modern studies of insight. A classy riddle is precise, not merely vague, and the answer should click.</p>
+
+      <h3>Victorian parlour games</h3>
+      <p>Before screens, families played with language in the drawing room. The Minister’s Cat is an alphabet game: the minister’s cat is an adorable cat, a bashful cat, a calm cat, and so on. Consequences is a shared story built in parts. Ghost, and its harder cousin Superghost, have players add a letter to a growing string without completing a word, though they must have a real word in mind. These games were already oral. They are a gold mine for audio design.</p>
+
+      <h3>Oulipo constraints</h3>
+      <p>Oulipo, the Ouvroir de littérature potentielle, was founded in 1960 by Raymond Queneau and François Le Lionnais. Its writers treat formal constraints as engines of invention. Jean Lescure’s S+7, often called N+7, replaces each noun in a text with the seventh noun after it in a dictionary. Georges Perec wrote a whole novel, La Disparition, without the letter E, a lipogram. You need not write a novel. A two-sentence lipogram, or a short N+7 of a famous line, makes a brisk and civilised challenge. The S+7 constraint is described on <a href="https://oulipo.net/en/contraintes/s7">the Oulipo site’s S+7 page</a>.</p>
+
+      <h3>Etymology and Latin and Greek roots</h3>
+      <p>This is the most didactic of the forms, and it matches the academic flavour you asked for in the chess app. English is a house built on older foundations: Latin scribere gives us script, describe, scribble and scripture; Greek phone gives us telephone, symphony and cacophony. A game that asks, “Which of these is not of the same family?” or “Name a cousin of this root,” teaches vocabulary in clusters rather than as isolated items. That is how a scholarly mind prefers to learn.</p>
+
+      <h3>Word ladders</h3>
+      <p>Lewis Carroll invented this puzzle, first calling it Word-Links and then Doublets, and introduced it to readers of Vanity Fair in 1879. You change one letter at a time, each step a real word, to travel from one word to another: COLD to CORD to CARD to WARD to WARM. The beauty is the short path, and the temptation is to wander. Scoring can reward fewer steps.</p>
+
+      <h3>Spoonerisms</h3>
+      <p>Named after the Reverend William Archibald Spooner of Oxford, these swap the opening sounds of words. “A crushing blow” may come out as “a blushing crow.” Some famous examples are probably later inventions, but the form is kind and funny, and it trains a sharp ear for speech sounds. That is useful for anyone who lives by listening.</p>
+
+      <h3>Palindromes</h3>
+      <p>A palindrome reads the same forwards and backwards: TENET, or the grand “A man, a plan, a canal: Panama.” As a game, palindromes can be recognised, completed, or built under a time that is gentle rather than harsh. They teach attention to letter order, which in an audio game becomes attention to a sequence spoken carefully, then reversed.</p>
+    </section>
+
+    <section aria-labelledby="method">
+      <h2 id="method">A method for inventing a new word game</h2>
+      <p>Invention is less mysterious if you follow a sequence. You may loop back, but it helps not to begin with decoration, or with a business plan, before the game itself exists.</p>
+
+      <h3>1. Find the core mechanic</h3>
+      <p>Ask: what does the player actually do, again and again? Rearrange letters. Change one letter. Name a root. Hear a clue and say one word. Add a letter without finishing a word. The mechanic should be small enough to describe in one sentence. If you need a paragraph, it is still two games in a coat.</p>
+
+      <h3>2. Choose a constraint</h3>
+      <p>The constraint is the pressure that creates wit. It might be a fixed word length, a forbidden letter, a single cryptic device, a path of five steps, or a rule that every answer must begin with the last letter of the one before. A good constraint feels like a well-cut coat, not a tight collar. It should generate interesting answers, not a desert.</p>
+
+      <h3>3. Decide how scoring works</h3>
+      <p>Scoring tells the player what you value. If you only mark speed, people will rush and guess. If you only mark being right, some will freeze. A classy scheme often rewards accuracy first, then economy, then a little style. For example: full marks for a correct answer, a modest bonus for needing no hint, a small bonus for a shorter word ladder, and no punishment so sharp that a miss ends the pleasure. You already know, from chess training, that accuracy can matter more than mere activity.</p>
+
+      <h3>4. Design a difficulty curve</h3>
+      <p>Start with one idea, clearly taught, as you asked to do with a single ship type in another game. Then add layers. In a cryptic trainer, begin with anagrams only, then hidden words, then mixed clues. In a roots game, begin with obvious families, then false friends, then words whose meaning has drifted, such as nice, which once came from Latin for ignorant. Tell the player what is changing. A sudden unexplained jump feels unfair; a named new challenge feels like a lesson.</p>
+
+      <h3>5. Build for replayability</h3>
+      <p>A game is replayable when the rule is stable and the material is fresh. That means a large, honest word list, a way to shuffle or date the puzzles, and perhaps a daily challenge that can also be opened at any time. Avoid a single fixed set that is exhausted in an afternoon, unless you plan to add a new set each week. Memory of yesterday’s answers should not be the only skill that improves.</p>
+
+      <h3>6. Apply elegance tests</h3>
+      <p>Before you fall in love with your own invention, put it through a short trial of taste.</p>
+      <ul>
+        <li>Can you explain it in three sentences, without jargon?</li>
+        <li>Does every rule earn its place? If you removed one, would the game collapse, or would it simply feel lighter and better?</li>
+        <li>Is the wit in the language, or only in the presentation?</li>
+        <li>Can it be played fairly by ear, with no essential information locked in a picture or a grid?</li>
+        <li>Would the spirit of the game still be recognisable in a seventeenth-century study, or a Victorian parlour, even if the device itself is new?</li>
+        <li>Is there one beautiful idea, rather than six middling ones stitched together?</li>
+        <li>Does a wrong answer teach something, or only sting?</li>
+      </ul>
+
+      <h3>7. Play-test with real ears and real fingers</h3>
+      <p>You are the first and best tester for VoiceOver and one-finger typing, but you should not be the only one. Try the game with a sighted friend using VoiceOver for a stretch, and with someone who is new to the rules. Sit with the following questions.</p>
+      <ul>
+        <li>Where did the player get lost, and was that the puzzle’s fault or the wording of a button?</li>
+        <li>Were any labels vague, such as “button” or “item, 3 of 12”?</li>
+        <li>Did sound effects talk over VoiceOver, or help it?</li>
+        <li>How many typings did a single round demand, and did that tire the finger before it tired the mind?</li>
+        <li>Did hints arrive unasked? You have already found, in chess, that extra hints can become noise.</li>
+        <li>After five minutes, did the player want one more round?</li>
+      </ul>
+      <p>Change one thing at a time after a test. If you change six, you will not know which change helped.</p>
+    </section>
+
+    <section aria-labelledby="accessible-design">
+      <h2 id="accessible-design">Design for audio, VoiceOver, and one-finger play</h2>
+      <p>This is not an afterthought. For a classy word game, accessible design is often the same thing as good design. The following habits will serve an iPhone 11 on iOS, with VoiceOver, and with one-finger typing.</p>
+
+      <h3>Put the words first</h3>
+      <p>Every essential fact should be available as text that VoiceOver can read: the clue, the length of the answer, the letters already given, the score, and what the current button will do. Do not hide meaning in colour, position, or an unmarked grid. A crossword-like game is usually better, at first, as a list of clues rather than a visual grid. If a grid is added later, each square should be its own labelled control, such as “row 3, column 4, letter R, crossing 3 across and 4 down.”</p>
+
+      <h3>Keep answers short, and offer more than typing</h3>
+      <p>One-finger typing on an iPhone is honest work. It should be reserved for moments that deserve it, not for every small choice. Offer, in this order of ease:</p>
+      <ul>
+        <li>A short spoken or on-screen choice of three or four answers, each a clear button.</li>
+        <li>A first-letter shortcut: the player types or chooses only the first letter, then confirms if several words share it.</li>
+        <li>Dictation, with a chance to hear the result and correct it.</li>
+        <li>Full typing for the final answer, with a generous undo and no penalty for a typo that is immediately fixed.</li>
+      </ul>
+      <p>Answers of one word, or a short phrase, are kinder than long sentences. If a longer answer is needed, let the player build it from a small set of words rather than type it all.</p>
+
+      <h3>Use gestures that already feel natural</h3>
+      <p>Do not invent a private gesture language if standard VoiceOver gestures will do. Swipe to move between clues or letters, double-tap to open or confirm, and keep a consistent place for Back, Hint, and Confirm. If you later add a gyroscope, as you hope to do in chess, keep it optional, calibrate it, and never let a stray tilt submit an answer. A tilt may move a cursor; a deliberate double-tap should still be what plays the move or accepts the word.</p>
+
+      <h3>Sound cues, used sparingly</h3>
+      <p>You have said that VoiceOver already does the talking, and that extra app speech can be dropped if it is not used. That is a sound instinct here too. Prefer short earcons, little musical signals, over a second voice that competes with VoiceOver.</p>
+      <ul>
+        <li>A soft click when the selection moves.</li>
+        <li>A clear, pleasant chime for a correct answer, especially for a curved or insightful one, such as a cryptic clue solved after a reinterpretation.</li>
+        <li>A low, gentle tone for a miss, not a harsh buzz.</li>
+        <li>A distinct warning if the player is about to submit a blank answer.</li>
+        <li>Silence whenever VoiceOver is speaking, or at least no overlapping speech.</li>
+      </ul>
+      <p>Hints should be requested, not offered in a stream. One hint at a time is enough: perhaps the first letter, then a device (“this is an anagram”), then a fuller nudge.</p>
+
+      <h3>Page shape and session length</h3>
+      <p>As with your chess board, try to keep a round on one screen: clue, answer area, and two or three actions. Headings should match what they contain. Buttons should be named as actions, for example “Hear the clue again”, “Choose wade”, “Submit earth”, not “OK” or “Click here”. A round of one or two minutes is a good default. A longer sitting can be a run of short rounds, so the player can stop after any one of them and lose nothing.</p>
+    </section>
+
+    <section aria-labelledby="concepts">
+      <h2 id="concepts">Fifteen original game concepts</h2>
+      <p>Each sketch below is a starting point, not a finished ruleset. All of them can be played by ear. I have given a short example and a note on what the mind is practising.</p>
+
+      <h3>1. The Fair Clue</h3>
+      <p>Rules. The player hears one cryptic-style clue and the length of the answer. Early levels use a single device, such as anagrams only, and say so. Later levels mix devices and stop announcing them. The player may ask for the type of device, then the first letter, then a fuller hint. Scoring favours a correct answer with fewer hints.</p>
+      <p>Example. Clue: “Broken heart produced earth (5).” The word broken hints at an anagram. HEART is rearranged to EARTH, which is also defined by the word earth. The penny drops.</p>
+      <p>How it builds the mind. This is insight practice: you must drop the surface story of the clue and find the hidden grammar. It also grows vocabulary and the habit of checking that a proposed word truly fits both halves of a fair clue.</p>
+
+      <h3>2. Root and Branch</h3>
+      <p>Rules. The player is given a Latin or Greek root, with a plain English sense, and is asked to do one of three things: name another English word from the same root, choose which word in a short list is the cuckoo, or say whether a proposed family member is genuine.</p>
+      <p>Example. Root: scrib or script, from Latin scribere, to write. Which of these does not belong: scripture, description, scribble, scrimp? The odd one is scrimp, which has a different history and means to be stingy. Scripture, description and scribble all grow from writing.</p>
+      <p>How it builds the mind. Vocabulary is learnt in families, which is more powerful than isolated lists. The player also practises careful judgement, because English is full of lookalikes that are not true relations.</p>
+
+      <h3>3. Doublets by Candlelight</h3>
+      <p>Rules. This is Carroll’s ladder, dressed as a quiet challenge. Two words of the same length are given. The player changes one letter at a time, and each step must be a real word. A target number of steps is offered, but a longer valid path still counts, with a lower style score. The current chain is always readable as a list.</p>
+      <p>Example. Turn COLD into WARM in four changes: COLD, CORD, CARD, WARD, WARM.</p>
+      <p>How it builds the mind. This is planned search. You hold the goal in mind, try a branch, and backtrack if you meet a dead end. It is close, in spirit, to finding a path through a chess problem, only with letters.</p>
+
+      <h3>4. Remote Cousins</h3>
+      <p>Rules. Three words are spoken. The player supplies a fourth word that links all three, as in Mednick’s test, but the tone is that of a parlour puzzle, not an examination. Early rounds use close links. Later rounds use more distant ones. A short list of choices can be offered before open answering is required.</p>
+      <p>Example. The words are pine, crab and sauce. The cousin is apple, which gives pineapple, crab apple and apple sauce.</p>
+      <p>How it builds the mind. This is associative flexibility, the same family of thought as lateral thinking. You search among meanings, compounds and common phrases until a hidden meeting-place appears.</p>
+
+      <h3>5. The Spooner Service</h3>
+      <p>Rules. The player hears a phrase that has had its opening sounds swapped, and must restore the intended phrase. Alternatively, the player is given a sensible phrase and must produce the spoonerism. Answers are short, and multiple choice works very well.</p>
+      <p>Example. Spoonerise the words “lighting guide” and you get “guiding light.” Or, in the other direction, a traditional example: the blushing crow was meant to be a crushing blow.</p>
+      <p>How it builds the mind. This sharpens phonological awareness, the ear for the sounds that words are made of. That skill supports spelling, new vocabulary, and confident listening.</p>
+
+      <h3>6. Palindrome Gate</h3>
+      <p>Rules. In one mode, the player judges whether a word or short phrase is a palindrome. In another, the start of a famous palindrome is given and the player completes it. In a third, the player builds a palindrome from a pool of letters, with the growing word read forwards and backwards after each addition.</p>
+      <p>Example. “Able was I ere I…” is completed by “saw Elba.” Or a simple judgement: is REVIVER a palindrome? Yes.</p>
+      <p>How it builds the mind. The player must hold a sequence and reverse it, which is a tidy exercise for verbal working memory, and a lesson in letter or sound order.</p>
+
+      <h3>7. The Lipogram Letter</h3>
+      <p>Rules. Inspired by Oulipo, a short everyday sentence is given, together with a banned letter. The player must rewrite the sentence so that the meaning remains and the banned letter does not appear. A later level bans E, which is devilish in English. Scoring can mark success, then elegance: fewer added words, closer meaning.</p>
+      <p>Example. Rewrite “The cat sat on the mat” without the letter A. One fair attempt: “The kitty sat on the rug.”</p>
+      <p>How it builds the mind. This is constrained production, not only recognition. You search your vocabulary for substitutes and feel how English can be bent without being broken. It is excellent for precise wording.</p>
+
+      <h3>8. The Hidden Acrostic</h3>
+      <p>Rules. The player answers a short run of fair clues, each with a one-word answer. After each answer, the first letters so far are read out. Those letters spell a hidden word or a famous name. The player may solve the message early for a bonus, or wait until the end.</p>
+      <p>Example. Five short clues yield the answers Maple, Ember, River, Cypress and Yield. After each one, the game reads the first letters so far: M; then M, E; then M, E, R; then M, E, R, C; and finally M, E, R, C, Y, which spell MERCY. A player who hears the message by the fourth answer may say it early and earn a small bonus. In a finished set, each clue would be written so that its answer is fair and inevitable, and the hidden word would be a graceful consequence, never a reason to force an awkward fit.</p>
+      <p>How it builds the mind. Ordinary clue-solving is joined to a second, unfolding pattern. The player practises holding a growing structure in mind, which is working memory in a very pleasant disguise.</p>
+
+      <h3>9. Ghost of the Library</h3>
+      <p>Rules. This is the old parlour game Ghost, made solitary or for two. Letters are added one by one to a string. You must always have a real word in mind, but you lose if you are the one who completes a word of a chosen minimum length, say four letters. In the solo game, a courteous opponent in the software plays fairly and will, on request, name the word it had in mind. Each letter is chosen from a short list or by typing a single character.</p>
+      <p>Example. The string is S-T-A. If you add R, you have begun STAR, STARE or START, among others, but STAR itself would already finish a four-letter word, so R would lose. You might add C, heading towards STACK or STATION, depending on what you are thinking of, and hope the next letter still leaves room.</p>
+      <p>How it builds the mind. This is vocabulary under pressure, plus planning. You search ahead through possible words, which is close to the look-ahead you already practise in chess, only the pieces are letters.</p>
+
+      <h3>10. The Precise Word</h3>
+      <p>Rules. A situation is described in ordinary language, and two or three near-synonyms are offered. The player chooses the word that fits most exactly. Later rounds may ask the player to supply the word, with a first letter given.</p>
+      <p>Example. “To walk through shallow water.” Choices: stroll, wade, march. The precise word is wade. Stroll is unhurried walking on land, and march is walking with purpose, usually on a surface.</p>
+      <p>How it builds the mind. This is lexical precision, the scholar’s habit of not treating all neighbours as equals. It improves both comprehension and expression, and it is naturally multiple-choice, so it is kind to one-finger play.</p>
+
+      <h3>11. The Court Riddle</h3>
+      <p>Rules. A short riddle is read, in a slightly formal diction. The player may request one image to be explained, or a category (“it is a creature”, “it is a weather”, “it is a thing in a house”). Answers are usually one word. Public-domain riddles, including versions from older English, can sit beside new ones written in the same tight style.</p>
+      <p>Example, after the Exeter Book’s book-moth: “A moth ate words, and yet it was no scholar. What was consumed?” The answer is a book, or the words in a book, and the joke is that the moth gained no wisdom by its meal. A new riddle should be just as exact.</p>
+      <p>How it builds the mind. Riddles train the release of a first, misleading picture, which is the heart of lateral thinking. They also reward close listening to each word, because in a good riddle no word is idle.</p>
+
+      <h3>12. The Cabinet Anagram</h3>
+      <p>Rules. A theme is announced, such as the sea, the court, or the garden. An anagram is given, either as mixed letters spoken clearly in groups, or as a phrase that must be rearranged into a theme-word. In harder play, the anagram is hidden inside a fair sentence.</p>
+      <p>Example. Theme: the night sky. Letters: A, R, E, T, S, M, N, O, O. One answer is ASTRONOMER, and a pretty second rearrangement, if you allow a phrase, is MOON STARER.</p>
+      <p>How it builds the mind. Letter rearrangement is mental rotation in language. When a theme is added, you also narrow the search with meaning, which is how experts solve, rather than by brute force.</p>
+
+      <h3>13. The Bridge Word</h3>
+      <p>Rules. Two words are given. The player must find a third word that forms a familiar compound or phrase with each of them, or that stands between them in meaning. A short list may be offered at first.</p>
+      <p>Example. The words are fruit and tea. A bridge is cake, giving fruitcake and tea cake. Another round: needle and haystack are already a phrase, so the bridge might be a different pair, such as pine and crab, which again can meet at apple, if you wish to show how games can share a family likeness without being the same game.</p>
+      <p>How it builds the mind. This trains collocational knowledge: which words keep company in English. That is a large part of sounding, and thinking, like a practised user of the language.</p>
+
+      <h3>14. The Etymological Well</h3>
+      <p>Rules. A common English word is given, and two or three origin stories are told, only one of which is true. The stories should all sound plausible, so that guesswork by “the fancy one is fake” does not work. After the answer, a short, plain note explains the true history and how the meaning has shifted.</p>
+      <p>Example. The word is nice. Was it originally from a word for precise, from a word for pleasant, or from a Latin word meaning ignorant? The last is true: Latin nescius, not knowing. The word travelled through “foolish”, then “fastidious”, and only later came to mean agreeable. The well has a long shaft.</p>
+      <p>How it builds the mind. This is historical curiosity applied to vocabulary. Players learn that meanings move, which makes them slower to be fooled by a familiar word in an older text, and richer in their sense of English.</p>
+
+      <h3>15. The Missing Foot</h3>
+      <p>Rules. A short line of public-domain verse is read with one word left out. The player must supply the word that is right in meaning, and that fits the rhythm. A later mode offers three words of similar sense, only one of which keeps the metre. This is not a pop trivia quiz about titles. It is an ear for cadence.</p>
+      <p>Example. From Thomas Gray, which is long out of copyright: “The curfew tolls the knell of parting …” The word is day. Night would break both the sense and the expected close of the line.</p>
+      <p>How it builds the mind. Poetry trains attention to rhythm and exact diction at once. For a blind player, this is a native strength: the line is already an oral thing. The game honours that.</p>
+    </section>
+
+    <section aria-labelledby="app-and-business">
+      <h2 id="app-and-business">From one idea to an app, and possible business angles</h2>
+
+      <h3>Begin as a web app, in the way you already play</h3>
+      <p>Your chess and Sound Sanctuary apps already show the right first shape: a self-contained web page that opens in Safari on an iPhone 11, with VoiceOver, and that can be added to the Home Screen. You do not need a shop listing, or a large download, to test whether a game is a pleasure. A top-level page, not a page trapped in another page, remains the safest pattern if you later add motion controls, because iOS is strict about those permissions.</p>
+      <p>A practical build for the first prototype might look like this.</p>
+      <ul>
+        <li>One game only, with a short welcome, a brief lesson, and a play screen that fits on one page.</li>
+        <li>A few dozen handmade puzzles at first, not a vast machine-made dump. Quality is the style.</li>
+        <li>Settings that stay out of the way: hint voice off by default if VoiceOver is running, sounds on but adjustable, and a large, clearly named back control.</li>
+        <li>A simple end-of-round report: how many you got right, how many hints you used, and one sentence of encouragement that is not fluffy.</li>
+        <li>No account, no tracking, no necessary internet once the page is saved, if you can manage it. That makes the app feel like a book you own.</li>
+      </ul>
+      <p>Only after the game is a joy on your own phone would I think about a more official home, a weekly puzzle, or a second game in the same family.</p>
+
+      <h3>Business, when you are ready</h3>
+      <p>You have said you would like to start a business someday. You need not decide that now. Still, it is wise to invent in a way that leaves the door open.</p>
+      <p>There is a real market in games that are a pleasure for blind and partially sighted players, and also for anyone who wants to play by ear, or with one hand. Most famous word games are built around a look: a grid, a coloured board, a set of tiles. If your game is excellent by ear, that is not a limitation. It is a difference people will pay for, or at least remember. Older players who love cryptics, schools that want vocabulary with some dignity, and sighted players who commute with earphones are all possible audiences. The accessibility is the standard, not a special mode bolted on at the end.</p>
+      <p>If you ever sell or promote a game, keep the claims as honest as the clues. Say that it trains word skill, attention and flexible thinking. Do not say that it prevents dementia, raises IQ, or is a medical treatment, unless one day you have the sort of evidence a regulator would expect. In Britain, the Advertising Standards Authority takes a dim view of hard health claims that the science does not support. Truth, in this field, is itself a form of class.</p>
+      <p>Possible modest paths, later on, include a free web app that builds trust, a small paid “salon” with a new set of fair clues or roots each week, licensing a puzzle column to a magazine or a radio programme, or, much later, a small house of related games under one careful name. None of that need be rushed. A single beloved prototype is a better foundation than a shop full of half-made ideas.</p>
+
+      <h3>Word lists, copyright and names</h3>
+      <p>The words in a game need a lawful source, and the name of the game must be your own.</p>
+      <ul>
+        <li>Older dictionaries can be used with freedom when they are in the public domain. Webster’s Revised Unabridged Dictionary of 1913 is a well-known example, and is widely used in projects that need definitions they may reprint.</li>
+        <li>Princeton WordNet may be used, copied, modified and distributed, including for commercial work, provided you keep its copyright notice and disclaimer. You must not use Princeton’s name to advertise the product. The terms are at <a href="https://wordnet.princeton.edu/license-and-commercial-use">Princeton’s WordNet licence page</a>.</li>
+        <li>Some modern word lists, such as SCOWL, are offered under generous licences that still require you to keep the notice with the list. Always read the licence that travels with the file.</li>
+        <li>Do not use official Scrabble word lists, or any other publisher’s crossword list, unless you have a licence. Those lists are protected, even if the individual short words are ordinary English.</li>
+        <li>Do not borrow trademarked names. Scrabble, Boggle, Words With Friends, and Wordle are other people’s marks. Cryptic crossword, word ladder, anagram, palindrome, and riddle are ordinary English, and you may use those words in a description. Invent a fresh title: The Fair Clue, Root and Branch, Remote Cousins, and the others in this report are offered as starting points you may keep, change, or set aside.</li>
+        <li>For quotations, use verse and prose that are clearly out of copyright, or write new lines yourself. Gray’s Elegy is safe. A living poet’s stanza is not, without permission.</li>
+        <li>If a second person writes clues for you, agree in writing who owns them. It saves friendship later.</li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="first-game">
+      <h2 id="first-game">A recommended first game to prototype</h2>
+      <p>If I were sitting with you and we could build only one game next, I would begin with The Fair Clue.</p>
+      <p>It is British, classy, and close to the teaching style you already like in chess: a short lesson, a fair problem, a chance to take a hint, and a score that cares about accuracy. It puts the unique pleasure of word games, the moment when the sense flips, right at the centre. The research on insight and cryptic clues, discussed earlier, is a nice support, but the stronger reason is human: that click of understanding is something a player will come back for.</p>
+      <p>It is also the most practical first app. You can do without a grid. One clue, one answer, one page. VoiceOver reads a cryptic clue as naturally as a person would. Early rounds can be multiple choice, so your finger is not worn out. Later rounds can ask for a typed or dictated word. You can start with anagrams only, then add hidden words, then mixed devices, and the player always knows what is being asked. A few dozen handmade clues, written to Ximenes’s standard of fairness, will teach you more than a thousand automatic ones.</p>
+      <p>If you wanted an even smaller first step, to test the feel of a web app before writing a lot of clues, Remote Cousins or The Precise Word would also serve. They are quicker to stock with material. I would still aim, after that warm-up, at The Fair Clue, because it has more room to grow: a daily clue, a course of devices, and later, if you wish, a companion game such as Root and Branch in the same scholarly house.</p>
+      <p>When you have played a prototype of The Fair Clue on your iPhone, we can tune the wording, the hints, and the sounds with you, in the same way we would tune a chess lesson: by listening to where it sings, and where it gets in the way.</p>
+    </section>
+
+    <section aria-labelledby="closing">
+      <h2 id="closing">A last word</h2>
+      <p>You already have the two gifts that matter most for this work: a love of being taught with dignity, and a clear sense of what feels elegant rather than cheap. The rest is method. Steal from the old forms, keep one idea at the centre, test by ear, tell the truth about what the mind is gaining, and let a single game become excellent before you invent the next.</p>
+      <p>I hope this report is useful, Ahsan, and that it gives you both pleasure to think about and a practical path when you are ready to build. The gyroscope work on the chess app can wait its turn, as you asked. When you want to invent a word game in earnest, The Fair Clue is ready to be made.</p>
+      <p>With warm good wishes,</p>
+      <p>Your workmate</p>
+    </section>
+
+    <section aria-labelledby="sources">
+      <h2 id="sources">Sources</h2>
+      <p>The following works were checked for this report. Links are given only where the record was verified.</p>
+      <ul class="source-list">
+        <li>Baddeley, A. (1992). Working memory. Science, 255(5044), 556 to 559. <a href="https://www.science.org/doi/10.1126/science.1736359">https://www.science.org/doi/10.1126/science.1736359</a></li>
+        <li>Baddeley, A., Gathercole, S., and Papagno, C. (1998). The phonological loop as a language learning device. Psychological Review, 105(1), 158 to 173. <a href="https://doi.org/10.1037/0033-295x.105.1.158">https://doi.org/10.1037/0033-295x.105.1.158</a></li>
+        <li>Brooker, H., Wesnes, K. A., Ballard, C., and colleagues. (2019). An online investigation of the relationship between the frequency of word puzzle use and cognitive function in a large sample of older adults. International Journal of Geriatric Psychiatry. <a href="https://pubmed.ncbi.nlm.nih.gov/30443984/">https://pubmed.ncbi.nlm.nih.gov/30443984/</a>. University of Exeter summary: <a href="https://news-archive.exeter.ac.uk/2019/may/title_716265_en.html">https://news-archive.exeter.ac.uk/2019/may/title_716265_en.html</a></li>
+        <li>Devanand, D. P., Goldberg, T. E., Qian, M., and colleagues. (2022). Computerized games versus crosswords training in mild cognitive impairment. NEJM Evidence, 1(12). <a href="https://evidence.nejm.org/doi/full/10.1056/EVIDoa2200121">https://evidence.nejm.org/doi/full/10.1056/EVIDoa2200121</a>. Also at <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10457124/">https://pmc.ncbi.nlm.nih.gov/articles/PMC10457124/</a></li>
+        <li>Friedlander, K. J., and Fine, P. A. (2018). “The penny drops”: investigating insight through the medium of cryptic crosswords. Frontiers in Psychology. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6037892/">https://pmc.ncbi.nlm.nih.gov/articles/PMC6037892/</a></li>
+        <li>Mednick, S. (1962). The associative basis of the creative process. Psychological Review. <a href="https://doi.org/10.1037/h0048850">https://doi.org/10.1037/h0048850</a></li>
+        <li>Simons, D. J., Boot, W. R., Charness, N., Gathercole, S. E., Chabris, C. F., Hambrick, D. Z., and Stine-Morrow, E. A. L. (2016). Do “brain-training” programs work? Psychological Science in the Public Interest, 17(3), 103 to 186. Introduced at <a href="https://www.psychologicalscience.org/publications/brain-training.html">https://www.psychologicalscience.org/publications/brain-training.html</a></li>
+        <li>Lifestyle Enrichment in Later Life and Its Association With Dementia Risk. (2023). JAMA Network Open. <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2807256">https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2807256</a></li>
+        <li>Oulipo. S+7 constraint. <a href="https://oulipo.net/en/contraintes/s7">https://oulipo.net/en/contraintes/s7</a></li>
+        <li>Princeton University. WordNet licence and commercial use. <a href="https://wordnet.princeton.edu/license-and-commercial-use">https://wordnet.princeton.edu/license-and-commercial-use</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>End of the report. Prepared for Ahsan Ali on 11 November 2026. This document contains no tables or images, and uses headings so that a screen reader can move from section to section.</p>
+  </footer>
+</body>
+</html>
